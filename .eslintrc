@@ -1,13 +1,11 @@
 {
-    "extends": "airbnb",
-    "globals": {
-      "location": true
-    },
-    "rules": {
-      "no-unused-vars": 0
-    },
-    "env": {
-      "es6": true,
-      "browser": true
-    }
+  "extends": [
+    "plugin:vue/essential",
+    "plugin:prettier/recommended",
+    "eslint:recommended",
+    "plugin:jest/recommended"
+  ],
+  "env": {
+    "jest/globals": true
+  }
 }
