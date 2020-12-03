@@ -18,6 +18,9 @@ jobs:
         with:
           node-version: 14.x
 
+      - name: Check out code
+        uses: actions/checkout@v2
+
       - name: Build
         run: yarn install
 
