@@ -4,19 +4,16 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
   mode: 'development',
-  context: path.join(__dirname, '../'),
-  devtool: 'source-map',
-  entry: [
-    './src/index.js',
-  ],
+  devtool: 'inline-source-map',
+  entry: './src/index.js',
   output: {
+    path: path.join(__dirname, '../dist'), // directory where bundle is dropped
     filename: 'bundle.min.js',
-    publicPath: 'dist/', // directory where dev-server looks at for bundle
   },
   devServer: {
-    contentBase: path.join(__dirname, '../'),
-    compress: true,
-    port: 9000,
+    contentBase: path.join(__dirname, '../dist'),
+    port: 7000,
+    hot: true
   },
   optimization: {
     minimize: false

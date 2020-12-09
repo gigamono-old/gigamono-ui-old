@@ -3,4 +3,5 @@ node_modules/**
 yarn-error.log
 dist/**
 !dist/logo.png
+!dist/index.html
 coverage/

@@ -10,7 +10,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "build:prod": "cross-env NODE_ENV=production webpack --config webpack/config.prod.js --progress",
-    "build:dev:watch": "cross-env NODE_ENV=development webpack serve --config webpack/config.dev.js --inline --hot",
+    "build:dev:watch": "cross-env NODE_ENV=development webpack serve --config webpack/config.dev.js",
     "lint": "eslint --ext .jsx,.js ./",
     "test": "yarn test:unit",
     "test:unit": "jest"
@@ -36,14 +36,14 @@
     "vue-loader": "^15.9.5",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.6.12",
-    "webpack": "^5.9.0",
+    "webpack": "^5.10.0",
     "webpack-dev-server": "^3.11.0"
   },
   "devDependencies": {
-    "@vue/babel-preset-app": "^4.5.9",
-    "@vue/test-utils": "^1.1.1",
     "@babel/core": "^7.12.9",
     "@babel/preset-env": "^7.12.7",
+    "@vue/babel-preset-app": "^4.5.9",
+    "@vue/test-utils": "^1.1.1",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.3",
@@ -56,6 +56,6 @@
     "eslint-plugin-vue": "^7.1.0",
     "jest": "^26.6.3",
     "vue-jest": "^3.0.7",
-    "webpack-cli": "^4.2.0"
+    "webpack-cli": "4.2.0"
   }
 }
