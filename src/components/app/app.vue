@@ -3,15 +3,15 @@
 </template>
 
 <style lang="scss">
-@import "../../common/common.scss";
+  @import "../../common/common.scss";
 
-html,
-body,
-#app {
-  height: 100%;
-}
+  html,
+  body,
+  #app {
+    height: 100%;
+  }
 
-#app {
-  background-color: $dark02;
-}
+  #app {
+    background-color: $dark02;
+  }
 </style>
