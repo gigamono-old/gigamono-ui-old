@@ -1,0 +1,22 @@
+// Reset styles
+@import "./reset.scss";
+
+/// COLORS
+
+// Primaries
+
+// Secondary
+
+// Others
+$white: fff;
+
+// Gradients
+
+/// STYLES
+@mixin disable() {
+    cursor: not-allowed;
+}
+
+@mixin hide() {
+    display: none;
+}
