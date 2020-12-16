@@ -1,22 +1,56 @@
 // Reset styles
 @import "./reset.scss";
 
-/// COLORS
+/*** FONTS ***/
+:root {
+  --test: {
+    font-family: sans-serif;
+    color: red;
+  };
+}
 
-// Primaries
+/*** COLORS ***/
+:root {
+  --color-bg: rgba(245, 245, 245, 1);
+  --color-card-bg: rgba(255, 255, 255, 1);
+  --color-card-outline: rgba(197, 197, 197, 1);
+  --color-card-outline-min-focus: rgba(229, 229, 229, 1);
+  --color-card-outline-max-focus: rgba(181, 181, 181, 1);
+  --color-bg-dot: rgba(229, 229, 229, 1);
+  --color-gradient-pink: rgba(234, 160, 252, 1);
+  --color-gradient-blue: rgba(131, 161, 243, 1);
+  --color-text-black: rgba(85, 85, 85, 1);
+  --color-text-black-focus: rgba(51, 51, 51, 1);
+  --color-text-black-min-focus: rgba(113, 113, 113, 1);
+  --color-primary: rgba(131, 161, 243, 1);
+  --color-primary-dark: rgba(7, 65, 223, 1);
+  --color-primary-light: rgba(234, 238, 251, 1);
+  --color-primary-focus: rgba(77, 113, 211, 1);
+  --color-primary-min-focus: rgba(148, 171, 233, 1);
+  --color-secondary: rgba(50, 220, 118, 1);
+  --color-secondary-min-focus: rgba(45, 193, 104, 1);
+  --color-input-hint: rgba(197, 197, 197, 1);
+  --color-success: rgba(50, 220, 118, 1);
+  --color-success-dark: rgba(19, 165, 77, 1);
+  --color-warning: rgba(255, 122, 75, 1);
+  --color-warning-dark: rgba(207, 95, 56, 1);
+  --color-information: rgba(139, 213, 238, 1);
+  --color-error: rgba(235, 87, 87, 1);
+  --color-error-dark: rgba(189, 46, 46, 1);
+  --color-information-light: rgba(232, 247, 252, 1);
+  --color-information-dark: rgba(50, 167, 206, 1);
+  --color-menu-black: rgba(51, 51, 51, 1);
+  --color-menu-black-focus: rgba(38, 38, 38, 1);
+  --color-menu-black-min-focus: rgba(42, 42, 42, 1);
+  --color-menu-text-min-focus: rgba(255, 255, 255, 0.5);
+  --color-icon: rgba(153, 153, 153, 1);
+}
 
-// Secondary
-
-// Others
-$white: fff;
-
-// Gradients
-
-/// STYLES
+/*** STYLES ***/
 @mixin disable() {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 
 @mixin hide() {
-    display: none;
+  display: none;
 }
