@@ -14,10 +14,7 @@
 </script>
 
 <style lang="scss">
-  @import "./styles/common.scss";
-
-  html,
-  body {
-    height: 100%;
-  }
+  // Making these styles available in children elements.
+  @import "./assets/styles/styles.scss";
+  @import "./assets/styles/animations.scss";
 </style>

@@ -1,4 +1,7 @@
-/* https://gist.github.com/DavidWells/18e73022e723037a50d6 */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0-modified | 20110126
+   License: none (public domain)
+*/
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -361,3 +364,32 @@ textarea {
     color: #000;
     padding: 0.2em 0;
 }
+
+
+/*** CUSTOM ***/
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-general);
+  // These make some fonts lighter. Just the way they look in Figma.
+  -webkit-font-smoothing: antialiased; // Chrome & Safari
+  -moz-osx-font-smoothing: grayscale; // Firefox
+}
+
+a:hover,
+a:active,
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+

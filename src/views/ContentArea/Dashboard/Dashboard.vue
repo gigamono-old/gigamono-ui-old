@@ -8,7 +8,8 @@
 
 <style lang="scss" scoped>
   div {
-    background-color: green;
-    height: 100px;
+    background-color: #fff;
+    // background-color: var(--color-bg);
+    height: 100%;
   }
 </style>

@@ -1,64 +1,57 @@
 <template>
   <div>
-    <div class="header">
-      <div class="left-wrapper"></div>
-      <div class="mid-wrapper">{{ title }}</div>
-      <div class="right-wrapper">
-        <img src="../../assets/icons/icon-collapse.svg" alt="collapse" />
-      </div>
-    </div>
+    <Header class="header" title="Workflows" />
+
+    <SearchBar class="search-bar" placeholder="Search..." />
+
+    <Select class="select" />
+
     <div class="content-wrapper">
-      <Folder title="Folder WORKFLOW 000" :options="[]" />
-      <Folder title="Folder WORKFLOW 001" :options="[]" />
-      <div class="add-button">
-        <img src="../../assets/icons/icon-plus.svg" />
-        <div class="text">Add Folder</div>
+      <div class="folders-wrapper">
+        <Folder title="Folder DASH 000" :options="[]" />
+        <Folder title="Folder DASH 001" :options="[]" />
       </div>
+      <AddButton />
     </div>
   </div>
 </template>
 
 <script>
-  import Folder from "../../components/Common/Folder.vue";
+  import Folder from "./Common/Folder.vue";
+  import Header from "./Common/Header.vue";
+  import AddButton from "./Common/AddButton.vue";
+  import SearchBar from "../../components/Common/SearchBar.vue";
+  import Select from "../../components/Common/Select.vue";
 
   export default {
-    data: function() {
-      return {
-        title: "Workflow"
-      };
-    },
     components: {
-      Folder
+      Folder,
+      Header,
+      AddButton,
+      SearchBar,
+      Select
     }
   };
 </script>
 
 <style lang="scss" scoped>
-  // TODO ABSTRACT HEADER IF POSSIBLE
+  // ABSTRACT! MIXIN! FIX MARGIN!
   .header {
-    display: flex;
+    margin: 1em 0 2em 0;
+  }
 
-    .left-wrapper {
-      flex: 1;
-    }
-
-    .mid-wrapper {
-      display: flex;
-      justify-content: center;
-    }
-
-    .right-wrapper {
-      flex: 1;
-      display: flex;
-      justify-content: flex-end;
-    }
+  .search-bar,
+  .select {
+    margin: 1em var(--space-sidebar-margin);
   }
 
   .content-wrapper {
-    flex: 1;
-    .add-button {
-      display: flex;
-      flex-direction: row;
+    > .folders-wrapper {
+      margin: 2em 0 1em 0;
+    }
+
+    > .add-button {
+      margin: 1em var(--space-sidebar-margin);
     }
   }
 </style>

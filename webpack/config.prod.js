@@ -21,34 +21,16 @@ module.exports = {
         use: ['html-loader'],
       },
       {
-        test: /\.scss$/,
-        use: ['vue-style-loader', 'style-loader', 'css-loader', 'sass-loader'],
+        test: /\.scss$/, // For some reason saas-loader needs url path to be relative to src/. resolve-url-loader fixes that.
+        use: ['vue-style-loader', 'style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader'],
       },
       {
-        test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              esModule: false
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(ttf|eot|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              esModule: false
-            },
-          },
-        ],
-      },
-      {
-        test: /\.svg$/,
-        loader: 'svg-url-loader'
+        test: /\.(svg|png|jpg|gif|ttf|eot|woff2?)$/,
+        loader: 'file-loader',
+        options: {
+          esModule: false,
+          name: "[path][name].[ext]"
+        },
       }
     ],
   },

@@ -28,8 +28,8 @@
   #panel {
     height: 100%;
     display: grid;
-    grid-template-columns: 3em 18em 1fr;
-    grid-template-rows: 3em 1fr;
+    grid-template-columns: 4rem 20rem 1fr;
+    grid-template-rows: 3.8em 1fr;
     grid-template-areas:
       "navbar navbar navbar"
       "shortcuts-bar sidebar content-area";

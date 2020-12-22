@@ -8,9 +8,20 @@ import SidebarDashboard from "../views/Sidebar/Dashboard.vue";
 // Use Router.
 Vue.use(Router);
 
+// Default Route.
+// router.replace(ContentAreaWorkflow);
+
 // Create store.
 export default new Router({
   routes: [
+    {
+      path: "/",
+      name: "Workflows",
+      components: {
+        ContentArea: ContentAreaWorkflow,
+        Sidebar: SidebarWorkflow
+      }
+    },
     {
       path: "/workflows",
       name: "Workflows",
