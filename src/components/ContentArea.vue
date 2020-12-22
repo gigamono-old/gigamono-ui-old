@@ -8,8 +8,4 @@
   export default {};
 </script>
 
-<style lang="scss" scoped>
-  #content-area {
-    // background-color: var(--color-bg);
-  }
-</style>
+<style lang="scss" scoped></style>
