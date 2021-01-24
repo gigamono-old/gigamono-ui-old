@@ -17,11 +17,11 @@
 </template>
 
 <script>
-  import Folder from "./Common/Folder.vue";
-  import Header from "./Common/Header.vue";
-  import AddButton from "./Common/AddButton.vue";
-  import SearchBar from "../../components/Common/SearchBar.vue";
-  import Select from "../../components/Common/Select.vue";
+  import Folder from "./Common/Folder.vue"
+  import Header from "./Common/Header.vue"
+  import AddButton from "./Common/AddButton.vue"
+  import SearchBar from "../../components/Common/SearchBar.vue"
+  import Select from "../../components/Common/Select.vue"
 
   export default {
     components: {
@@ -31,7 +31,7 @@
       SearchBar,
       Select
     }
-  };
+  }
 </script>
 
 <style lang="scss" scoped>

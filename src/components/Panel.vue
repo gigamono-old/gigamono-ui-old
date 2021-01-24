@@ -8,10 +8,10 @@
 </template>
 
 <script>
-  import Navbar from "./Navbar.vue";
-  import ShortcutsBar from "./ShortcutsBar.vue";
-  import Sidebar from "./Sidebar.vue";
-  import ContentArea from "./ContentArea.vue";
+  import Navbar from "./Navbar.vue"
+  import ShortcutsBar from "./ShortcutsBar.vue"
+  import Sidebar from "./Sidebar.vue"
+  import ContentArea from "./ContentArea.vue"
 
   export default {
     name: "Panel",
@@ -21,7 +21,7 @@
       Sidebar,
       ContentArea
     }
-  };
+  }
 </script>
 
 <style lang="scss" scoped>

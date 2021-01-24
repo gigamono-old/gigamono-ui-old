@@ -1,4 +1,5 @@
 {
+    "semi": false,
     "vueIndentScriptAndStyle": true,
     "printWidth": 100
 }

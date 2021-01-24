@@ -378,18 +378,25 @@ body {
   -moz-osx-font-smoothing: grayscale; // Firefox
 }
 
+a,
 a:hover,
 a:active,
 a:focus {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   text-decoration: none;
   outline: none;
+  color: initial;
 }
 
-input {
+button, input {
   -webkit-appearance: none;
   -moz-appearance: none;
   outline: none;
   box-shadow: none;
   border: none;
+  background: none;
+  padding: 0;
+  font-family: initial;
+  color: initial;
 }
-

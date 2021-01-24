@@ -10,7 +10,7 @@
     props: {
       placeholder: String
     }
-  };
+  }
 </script>
 
 <style lang="scss" scoped>

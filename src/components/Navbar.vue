@@ -1,5 +1,5 @@
 <template>
-  <header id="navbar">
+  <nav id="navbar">
     <div class="left-wrapper">
       <div class="avatar-brand" />
       <div class="brand-name">Sageflow</div>
@@ -33,11 +33,11 @@
       </div>
       <div class="icon-dropdown" />
     </div>
-  </header>
+  </nav>
 </template>
 
 <script>
-  export default {};
+  export default {}
 </script>
 
 <style lang="scss" scoped>
@@ -82,7 +82,7 @@
       border-radius: 0.1rem;
       padding: 0.2rem 0.4rem;
       height: 1.8rem;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       white-space: nowrap;
 
       > .workspace {
@@ -213,7 +213,7 @@
       margin-left: 0.8rem;
 
       > .avatar-user {
-        // Had to use pixels here because browser behaviors are different with rme and round borders.
+        // Had to use pixels here because browser behaviors are different with rem and round borders.
         width: 45px;
         height: 45px;
         border-radius: 50%;
@@ -224,7 +224,7 @@
       }
 
       > .halo {
-        // Had to use pixels here because browser behaviors are different with rme and round borders.
+        // Had to use pixels here because browser behaviors are different with rem and round borders.
         position: absolute;
         width: 47px;
         height: 47px;

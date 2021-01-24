@@ -20,7 +20,7 @@
       options: Array // These are action icons shown on the folder. [{ iconUrl, function }]
     },
     computed: {}
-  };
+  }
 </script>
 
 <style lang="scss" scoped>

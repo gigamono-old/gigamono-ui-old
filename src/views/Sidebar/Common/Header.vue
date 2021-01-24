@@ -13,7 +13,7 @@
     props: {
       title: String
     }
-  };
+  }
 </script>
 
 <style lang="scss" scoped>
