@@ -1,12 +1,12 @@
-import Router from "vue-router";
-import Vue from "vue";
-import ContentAreaWorkflow from "../views/ContentArea/Workflow/Workflow.vue";
-import ContentAreaDashboard from "../views/ContentArea/Dashboard/Dashboard.vue";
-import SidebarWorkflow from "../views/Sidebar/Workflow.vue";
-import SidebarDashboard from "../views/Sidebar/Dashboard.vue";
+import Router from "vue-router"
+import Vue from "vue"
+import ContentAreaWorkflow from "../views/ContentArea/Workflow/Workflow.vue"
+import ContentAreaDashboard from "../views/ContentArea/Dashboard/Dashboard.vue"
+import SidebarWorkflow from "../views/Sidebar/Workflow.vue"
+import SidebarDashboard from "../views/Sidebar/Dashboard.vue"
 
 // Use Router.
-Vue.use(Router);
+Vue.use(Router)
 
 // Create router.
 export default new Router({
@@ -36,4 +36,4 @@ export default new Router({
       }
     }
   ]
-});
+})

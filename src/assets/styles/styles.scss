@@ -2,7 +2,6 @@
 @import "./reset.scss";
 
 /*** ICONS & AVATAR ***/
-// Importing icons from CSS to allow styling.
 :root {
   --icon-dashboard: url(../icons/icon-dashboard.svg);
   --icon-workflows: url(../icons/icon-workflows.svg);
@@ -107,10 +106,8 @@ $fonts: general PortLligatSans, brand Sansation, profile Saira;
   --color-menu-black-min-focus: #2a2a2a;
   --color-menu-text-min-focus: rgba(255, 255, 255, 0.5);
   --color-icon: #999999;
-}
 
-// Colors with Alphas
-:root {
+  // Colors with Alphas
   --color-primary-alpha: rgba(131, 161, 243, 0.1);
 }
 
@@ -155,11 +152,11 @@ $fonts: general PortLligatSans, brand Sansation, profile Saira;
 }
 
 /*** STATES ***/
-@mixin disable() {
+.disabled {
   cursor: not-allowed;
 }
 
-@mixin hide() {
+.hidden {
   display: none;
 }
 
