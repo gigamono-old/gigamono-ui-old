@@ -35,5 +35,5 @@ export default new Router({
     //     Sidebar: SidebarDashboard
     //   }
     // }
-  ]
+  ],
 })

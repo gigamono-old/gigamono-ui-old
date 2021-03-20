@@ -1,14 +1,12 @@
 <template lang="pug">
-Panel
+Button
 </template>
 
 <script>
-  import Panel from "./components/Panel.vue"
-
+  import Button from "./components/Button/Button.vue"
   export default {
-    name: "App",
     components: {
-      Panel,
+      Button,
     },
   }
 </script>
