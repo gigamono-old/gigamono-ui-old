@@ -1,11 +1,7 @@
 {
-  "extends": [
-    "plugin:vue/essential",
-    "plugin:prettier/recommended",
-    "eslint:recommended",
-    "plugin:jest/recommended"
-  ],
-  "env": {
-    "jest/globals": true
+  "extends": ["prettier", "plugin:vue/base"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": ["error"]
   }
 }

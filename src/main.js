@@ -1,12 +1,4 @@
-import Vue from "vue"
-import index from "./index.vue"
-import store from "./store"
-import router from "./router"
+import { createApp } from "vue"
+import App from "./App.vue"
 
-Vue.config.productionTip = false
-
-new Vue({
-  store,
-  router,
-  render: h => h(index)
-}).$mount("#app") // Replaces #app
+createApp(App).mount("#app")

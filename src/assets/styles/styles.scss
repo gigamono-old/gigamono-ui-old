@@ -1,172 +1,22 @@
-// Reset styles
+/*** IMPORTS ***/
 @import "./reset.scss";
 
 /*** ICONS & AVATAR ***/
-:root {
-  --icon-dashboard: url(../icons/icon-dashboard.svg);
-  --icon-workflows: url(../icons/icon-workflows.svg);
-  --icon-explore: url(../icons/icon-explore.svg);
-  --icon-credentials: url(../icons/icon-credentials.svg);
-  --icon-help: url(../icons/icon-help.svg);
-  --icon-developers: url(../icons/icon-developers.svg);
-  --icon-settings: url(../icons/icon-settings.svg);
-  --icon-notifications: url(../icons/icon-notifications.svg);
-  --icon-dropdown: url(../icons/icon-dropdown.svg);
-  --icon-dropdown-2: url(../icons/icon-dropdown-2.svg);
-  --icon-collapse: url(../icons/icon-collapse.svg);
-  --icon-folder: url(../icons/icon-folder.svg);
-  --icon-plus: url(../icons/icon-plus.svg);
-  --icon-search: url(../icons/icon-search.svg);
-}
-
-:root {
-  --avatar-workspace: url(../images/avatar-workspace.png);
-  --avatar-brand: url(../images/avatar-brand.png);
-  --avatar-user: url(../images/avatar-user.png);
-}
-
-$icons: dashboard, workflows, explore, credentials, help, developers, settings, notifications,
-  dropdown, dropdown-2, collapse, folder, plus, search;
-
-@each $icon in $icons {
-  .icon-#{$icon} {
-    -webkit-mask-image: var(--icon-#{$icon});
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    mask-image: var(--icon-#{$icon});
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-    width: 1em;
-    height: 1em;
-    background-color: black;
-  }
-}
-
-$avatars: workspace, brand, user;
-
-@each $avatar in $avatars {
-  .avatar-#{$avatar} {
-    background-image: var(--avatar-#{$avatar});
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-  }
-}
 
 /*** FONTS ***/
-$fonts: general PortLligatSans, brand Sansation, profile Saira;
-
-// Cannot use variables to specify url in @font-face.
-// Cannot define @font-face in :root.
-// When @font-face is nested in a slector, cannot change font-family name.
-@each $ref, $font in $fonts {
-  @font-face {
-    font-family: $font;
-    src: url("../fonts/#{$font}.woff");
-  }
-}
-
-:root {
-  @each $ref, $font in $fonts {
-    --font-#{$ref}: "#{$font}";
-  }
-}
 
 /*** COLORS ***/
-:root {
-  --color-bg: #f5f5f5;
-  --color-card-bg: #ffffff;
-  --color-card-outline: #c5c5c5;
-  --color-card-outline-min-focus: #e5e5e5;
-  --color-card-outline-max-focus: #b5b5b5;
-  --color-dot-bg: #e5e5e5;
-  --color-gradient-pink: #eaa0fc;
-  --color-gradient-blue: #83a1f3;
-  --color-text-black: #555555;
-  --color-text-black-focus: #333333;
-  --color-text-black-min-focus: #717171;
-  --color-primary: #83a1f3;
-  --color-primary-dark: #0741df;
-  --color-primary-light: #eaeefb;
-  --color-primary-focus: #4d71d3;
-  --color-primary-min-focus: #94abe9;
-  --color-secondary: #32dc76;
-  --color-secondary-min-focus: #2dc168;
-  --color-input-hint: #c5c5c5;
-  --color-success: #32dc76;
-  --color-success-dark: #13a54d;
-  --color-warning: #ff7a4b;
-  --color-warning-dark: #cf5f38;
-  --color-information: #8bd5ee;
-  --color-error: #eb5757;
-  --color-error-dark: #bd2e2e;
-  --color-information-light: #e8f7fc;
-  --color-information-dark: #32a7ce;
-  --color-menu-black: #333333;
-  --color-menu-black-focus: #262626;
-  --color-menu-black-min-focus: #2a2a2a;
-  --color-menu-text-min-focus: rgba(255, 255, 255, 0.5);
-  --color-icon: #999999;
-
-  // Colors with Alphas
-  --color-primary-alpha: rgba(131, 161, 243, 0.1);
-}
 
 /*** GRADIENTS ***/
-:root {
-  --gradient-primary: linear-gradient(
-    90deg,
-    var(--color-gradient-pink) 0%,
-    var(--color-gradient-pink) 0.01%,
-    var(--color-gradient-blue) 100%
-  );
-  --gradient-share: linear-gradient(
-    180deg,
-    rgba(234, 238, 251, 0.5) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-}
 
 /*** SHADOWS ***/
-:root {
-  --shadow-icon-highlight: inset 0.2rem 0.1em 0.2rem 0.1rem var(--color-primary-alpha);
-  --shadow-panel-right: 0.2rem 0 0.3rem 0.08rem var(--color-primary-alpha);
-  --shadow-panel-down: 0 0.2rem 0.3rem 0.08rem var(--color-primary-alpha);
-}
 
 /*** THICKNESS ***/
-:root {
-  --thickness-h-divider: 0.1rem;
-  --thickness-v-divider: 0.06rem;
-  --thickness-panel-border: 0.1rem;
-}
 
 /*** HEIGHT ***/
-:root {
-  --height-shortcuts-bar-icon: 4rem;
-}
 
-/*** SPACES ***/
-:root {
-  --space-navbar-margin: 1.2rem;
-  --space-sidebar-margin: 1.2rem;
-}
+/*** MARGINS ***/
 
 /*** STATES ***/
-.disabled {
-  cursor: not-allowed;
-}
-
-.hidden {
-  display: none;
-}
 
 /*** STYLES ***/
-.h-divider {
-  background-color: var(--color-card-outline);
-  height: var(--thickness-h-divider);
-}
-
-.v-divider {
-  background-color: var(--color-card-outline);
-  width: var(--thickness-v-divider);
-}
