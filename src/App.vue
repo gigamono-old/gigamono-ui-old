@@ -1,9 +1,9 @@
 <template lang="pug">
-Button
+Button Sageflow
 </template>
 
 <script>
-  import Button from "./components/Button/Button.vue"
+  import Button from "@/components/Button/Button.vue"
   export default {
     components: {
       Button,
@@ -13,6 +13,6 @@ Button
 
 <style lang="scss">
   // Making these styles available in children elements.
-  @import "./assets/styles/styles.scss";
-  @import "./assets/styles/animations.scss";
+  @import "@/assets/styles/styles.scss";
+  @import "@/assets/styles/animations.scss";
 </style>

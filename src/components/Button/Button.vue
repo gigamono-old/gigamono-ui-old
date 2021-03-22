@@ -1,5 +1,5 @@
 <template lang="pug">
-button START ME
+button
   slot
 </template>
 
@@ -8,7 +8,11 @@ button START ME
 </script>
 
 <style lang="scss" scoped>
+  @import "@/assets/styles/styles.scss";
+
   button {
     background-color: red;
+    color: black;
+    font-family: var(--font-primary);
   }
 </style>

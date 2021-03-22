@@ -2,16 +2,88 @@
 @import "./reset.scss";
 
 /*** ICONS & AVATAR ***/
+$icons: (
+  icon-dashboard,
+  icon-dashboard-outline,
+  icon-design,
+  icon-design-outline,
+  icon-developer,
+  icon-developer-outline,
+  icon-documents,
+  icon-documents-outline,
+  icon-extensions,
+  icon-extensions-outline,
+  icon-extensions-2,
+  icon-extensions-outline-2,
+  icon-settings,
+  icon-settings-outline,
+  icon-workflows,
+  icon-workflows-outline,
+);
+
+@each $iconname in $icons {
+  .icon-#{$iconname} {
+    -webkit-mask-image: var(--icon-#{$iconname});
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-image: var(--icon-#{$iconname});
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    width: 1em;
+    height: 1em;
+    background-color: black;
+  }
+}
 
 /*** FONTS ***/
+$fonts: (primary: AndikaNewBasic);
+
+@each $key, $fontname in $fonts {
+  @font-face {
+    font-family: $fontname;
+    src: url("~@/assets/fonts/#{$fontname}.woff2");
+  }
+}
+
+:root {
+  @each $key, $fontname in $fonts {
+    --font-#{$key}: "#{$fontname}";
+  }
+}
 
 /*** COLORS ***/
+:root {
+  --color-primary: #0ab6ff;
+  --color-primary-0: #044966;
+  --color-primary-1: #066d99;
+  --color-primary-2: #0892cc;
+  --color-primary-3: #0ab6ff;
+  --color-primary-4: #3bc5ff;
+  --color-primary-5: #6cd3ff;
+  --color-primary-6: #9de2ff;
+
+  --color-text: #353535;
+  --color-text-0: #151515;
+  --color-text-1: #202020;
+  --color-text-2: #2a2a2a;
+  --color-text-3: #353535;
+  --color-text-4: #5d5d5d;
+  --color-text-5: #868686;
+  --color-text-6: #aeaeae;
+}
 
 /*** GRADIENTS ***/
 
 /*** SHADOWS ***/
 
 /*** THICKNESS ***/
+
+/*** WIDTH ***/
+
+:root {
+  --width-activity-bar: 2rem;
+  --width-activity-bar-shortcut: 2rem;
+}
 
 /*** HEIGHT ***/
 

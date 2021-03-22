@@ -33,9 +33,10 @@
     "node-sass": "^5.0.0",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
-    "sass-loader": "10.1.1",
-    "vue-loader": "^16.1.2",
-    "vue-template-compiler": "^2.6.12"
+    "sass-loader": "10.1.1"
+  },
+  "resolutions": {
+    "vue-loader": "^16.1.2"
   },
   "eslintConfig": {
     "root": true,

@@ -1,22 +1,28 @@
 import Button from "./Button.vue"
 
 export default {
-  title: "Example/Button",
+  title: "Gigamono/Button",
   component: Button,
+  parameters: {
+    componentSubtitle: "Displays a button",
+  },
   argTypes: {
     backgroundColor: { control: "color" },
     size: { control: { type: "select", options: ["small", "medium", "large"] } },
+    onClick: { action: "onClick" },
   },
 }
 
 const Template = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
   components: { Button },
-  template: "<Button />",
+  setup() {
+    return { args }
+  },
+  template: "<Button v-bind='args'>Sageflow</Button>",
 })
 
 export const Primary = Template.bind({})
 Primary.args = {
-  primary: true,
-  label: "Button",
+  backgroundColor: "red",
+  size: "medium",
 }
