@@ -1,39 +1,54 @@
-import Router from "vue-router"
-import Vue from "vue"
-// import ContentAreaWorkflow from "../views/ContentArea/Workflow/Workflow.vue"
-// import ContentAreaDashboard from "../views/ContentArea/Dashboard/Dashboard.vue"
-// import SidebarWorkflow from "../views/Sidebar/Workflow.vue"
-// import SidebarDashboard from "../views/Sidebar/Dashboard.vue"
+import { createRouter, createWebHistory } from "vue-router"
 
-// Use Router.
-Vue.use(Router)
+const routes = [
+  {
+    path: "/",
+    name: "default",
+    component: null,
+  },
+  {
+    path: "/dashboard",
+    name: "dashboard",
+    component: null,
+  },
+  {
+    path: "/design",
+    name: "design",
+    component: null,
+  },
+  {
+    path: "/documents",
+    name: "documents",
+    component: null,
+  },
+  {
+    path: "/documents",
+    name: "documents",
+    component: null,
+  },
+  {
+    path: "/extensions",
+    name: "extensions",
+    component: null,
+  },
+  {
+    path: "/developers",
+    name: "developers",
+    component: null,
+  },
+  {
+    path: "/settings",
+    name: "settings",
+    component: null,
+  },
+  {
+    path: "/spaces",
+    name: "spaces",
+    component: null,
+  },
+]
 
-// Create router.
-export default new Router({
-  routes: [
-    // {
-    //   path: "/",
-    //   name: "Workflows",
-    //   components: {
-    //     ContentArea: ContentAreaWorkflow,
-    //     Sidebar: SidebarWorkflow
-    //   }
-    // },
-    // {
-    //   path: "/workflows",
-    //   name: "Workflows",
-    //   components: {
-    //     ContentArea: ContentAreaWorkflow,
-    //     Sidebar: SidebarWorkflow
-    //   }
-    // },
-    // {
-    //   path: "/dashboard",
-    //   name: "Dashboards",
-    //   components: {
-    //     ContentArea: ContentAreaDashboard,
-    //     Sidebar: SidebarDashboard
-    //   }
-    // }
-  ],
+export default createRouter({
+  history: createWebHistory(),
+  routes,
 })

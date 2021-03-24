@@ -1,13 +1,9 @@
-import Vuex from "vuex"
-import Vue from "vue"
-import user from "@/store/modules/user"
-
-// Load Vuex.
-Vue.use(Vuex)
+import { createStore } from "vuex"
+import users from "@/store/modules/users"
 
 // Create store.
-export default new Vuex.Store({
+export default createStore({
   modules: {
-    user,
+    users,
   },
 })

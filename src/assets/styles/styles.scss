@@ -3,34 +3,34 @@
 
 /*** ICONS & AVATAR ***/
 $icons: (
-  icon-dashboard,
-  icon-dashboard-outline,
-  icon-design,
-  icon-design-outline,
-  icon-developer,
-  icon-developer-outline,
-  icon-documents,
-  icon-documents-outline,
-  icon-extensions,
-  icon-extensions-outline,
-  icon-extensions-2,
-  icon-extensions-outline-2,
-  icon-settings,
-  icon-settings-outline,
-  icon-workflows,
-  icon-workflows-outline,
+  dashboard,
+  dashboard-outline,
+  design,
+  design-outline,
+  developer,
+  developer-outline,
+  documents,
+  documents-outline,
+  extensions,
+  extensions-outline,
+  extensions-2,
+  extensions-outline-2,
+  settings,
+  settings-outline,
+  workflows,
+  workflows-outline,
 );
 
-@each $iconname in $icons {
-  .icon-#{$iconname} {
-    -webkit-mask-image: var(--icon-#{$iconname});
+@each $iconName in $icons {
+  .icon-#{$iconName} {
+    -webkit-mask-image: url("~@/assets/icons/icon-#{$iconName}.svg");
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: 100% 100%;
-    mask-image: var(--icon-#{$iconname});
+    mask-image: url("~@/assets/icons/icon-#{$iconName}.svg");
     mask-repeat: no-repeat;
     mask-size: 100% 100%;
-    width: 1em;
-    height: 1em;
+    width: inherit;
+    height: inherit;
     background-color: black;
   }
 }
@@ -38,16 +38,16 @@ $icons: (
 /*** FONTS ***/
 $fonts: (primary: AndikaNewBasic);
 
-@each $key, $fontname in $fonts {
+@each $key, $fontName in $fonts {
   @font-face {
-    font-family: $fontname;
-    src: url("~@/assets/fonts/#{$fontname}.woff2");
+    font-family: $fontName;
+    src: url("~@/assets/fonts/#{$fontName}.woff2");
   }
 }
 
 :root {
-  @each $key, $fontname in $fonts {
-    --font-#{$key}: "#{$fontname}";
+  @each $key, $fontName in $fonts {
+    --font-#{$key}: "#{$fontName}";
   }
 }
 
@@ -62,14 +62,23 @@ $fonts: (primary: AndikaNewBasic);
   --color-primary-5: #6cd3ff;
   --color-primary-6: #9de2ff;
 
-  --color-text: #353535;
-  --color-text-0: #151515;
-  --color-text-1: #202020;
-  --color-text-2: #2a2a2a;
-  --color-text-3: #353535;
-  --color-text-4: #5d5d5d;
-  --color-text-5: #868686;
-  --color-text-6: #aeaeae;
+  --color-text: #292d34;
+  --color-text-0: #1d1f24;
+  --color-text-1: #21242a;
+  --color-text-2: #25292f;
+  --color-text-3: #292d34;
+  --color-text-4: #3e4248;
+  --color-text-5: #54575d;
+  --color-text-6: #696c71;
+
+  --color-bg: #e3e7e9;
+  --color-bg-0: #c8d0d4;
+  --color-bg-1: #d1d8db;
+  --color-bg-2: #dadfe2;
+  --color-bg-3: #e3e7e9;
+  --color-bg-4: #edeff1;
+  --color-bg-5: #f6f7f8;
+  --color-bg-6: #ffffff;
 }
 
 /*** GRADIENTS ***/
@@ -81,13 +90,19 @@ $fonts: (primary: AndikaNewBasic);
 /*** WIDTH ***/
 
 :root {
-  --width-activity-bar: 2rem;
+  --width-activity-bar: 3.2rem;
   --width-activity-bar-shortcut: 2rem;
 }
 
 /*** HEIGHT ***/
 
 /*** MARGINS ***/
+
+/*** PADDINGS ***/
+
+:root {
+  --pad-general: 0.2rem;
+}
 
 /*** STATES ***/
 
