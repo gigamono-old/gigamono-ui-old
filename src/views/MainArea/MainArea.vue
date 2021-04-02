@@ -1,8 +1,6 @@
 <template lang="pug">
-#sidebar
-  .projects
-
-  slot
+#main-area
+  router-view(name="mainArea")
 </template>
 
 <script>
@@ -12,9 +10,8 @@
 </script>
 
 <style lang="scss" scoped>
-  #sidebar {
+  #main-area {
     width: 100%;
-    height: inherit;
-    background-color: crimson;
+    height: 100%;
   }
 </style>

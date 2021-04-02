@@ -10,12 +10,15 @@ export const getCurrentUser = async () => {
       layoutPreferences {
         activityBarMainShortcuts {
           iconName
+          route
         }
         activityBarSpaceShortcuts {
           iconName
+          route
         }
         activityBarOtherShortcuts {
           iconName
+          route
         }
       }
     }

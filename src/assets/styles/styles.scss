@@ -10,15 +10,21 @@ $icons: (
   developer,
   developer-outline,
   documents,
+  documents-2,
   documents-outline,
+  documents-2-outline,
   extensions,
   extensions-outline,
   extensions-2,
-  extensions-outline-2,
+  extensions-2-outline,
   settings,
   settings-outline,
   workflows,
   workflows-outline,
+  expand-arrow,
+  expand-arrow-2,
+  long-arrow,
+  search
 );
 
 @each $iconName in $icons {
@@ -36,7 +42,9 @@ $icons: (
 }
 
 /*** FONTS ***/
-$fonts: (primary: AndikaNewBasic);
+$fonts: (
+  primary: AndikaNewBasic,
+);
 
 @each $key, $fontName in $fonts {
   @font-face {
@@ -61,6 +69,8 @@ $fonts: (primary: AndikaNewBasic);
   --color-primary-4: #3bc5ff;
   --color-primary-5: #6cd3ff;
   --color-primary-6: #9de2ff;
+  --color-primary-7: #cef0ff;
+  --color-primary-8: #e7f8ff;
 
   --color-text: #292d34;
   --color-text-0: #1d1f24;
@@ -70,6 +80,8 @@ $fonts: (primary: AndikaNewBasic);
   --color-text-4: #3e4248;
   --color-text-5: #54575d;
   --color-text-6: #696c71;
+  --color-text-7: #7f8185;
+  --color-text-8: #94969a;
 
   --color-bg: #e3e7e9;
   --color-bg-0: #c8d0d4;
@@ -77,13 +89,37 @@ $fonts: (primary: AndikaNewBasic);
   --color-bg-2: #dadfe2;
   --color-bg-3: #e3e7e9;
   --color-bg-4: #edeff1;
-  --color-bg-5: #f6f7f8;
-  --color-bg-6: #ffffff;
+  --color-bg-5: #f1f2f4;
+  --color-bg-6: #f6f7f8;
+  --color-bg-7: #ffffff;
+
+  --color-primary-alpha: #055b8027;
+  --color-primary-alpha-0: #055b8010;
+  --color-primary-alpha-1: #055b8017;
+  --color-primary-alpha-2: #055b8020;
+  --color-primary-alpha-3: #055b8025;
+  --color-primary-alpha-4: #055b8030;
+  --color-primary-alpha-5: #055b8037;
+  --color-primary-alpha-6: #055b8040;
+  --color-primary-alpha-7: #055b8050;
+
+  --color-bg-dot: #e5e5e5;
+
+  --color-secondary: #E887FF;
+
+  --color-brand-primary: var(--color-primary);
+  --color-brand-secondary: var(--color-secondary);
 }
 
 /*** GRADIENTS ***/
 
 /*** SHADOWS ***/
+:root {
+  --shadow-primary: 0 0.1rem 0.2rem 0.0625rem var(--color-primary-alpha-1);
+  --shadow-surround: 0 0 0.25rem 0.0625rem var(--color-primary-alpha-1);
+  --shadow-surround-sharp-down: 0 0 0.125rem var(--color-primary-alpha-6),
+    0 0.3125rem 0.25rem var(--color-primary-alpha-0);
+}
 
 /*** THICKNESS ***/
 
@@ -96,14 +132,37 @@ $fonts: (primary: AndikaNewBasic);
 
 /*** HEIGHT ***/
 
-/*** MARGINS ***/
-
-/*** PADDINGS ***/
+/*** SPACING: MARGINS & PADDINGS ***/
 
 :root {
-  --pad-general: 0.2rem;
+  --spacing-gutter-primary: 0.125rem;
+  --spacing-activity-bar-element-margin: 1rem;
+  --spacing-sidebar-element-margin: 1rem;
+  --spacing-sidebar-element-width: calc(100% - 2rem);
+}
+
+/*** BORDER ***/
+
+:root {
+  --border-rad-xxl: 0.625rem;
+  --border-rad-xl: 0.5rem;
+  --border-rad-lg: 0.375rem;
+  --border-rad-md: 0.25rem;
+  --border-rad-sm: 0.1875rem;
+  --border-rad-xs: 0.125rem;
+
+  --border-bg-part-0: 0.0625rem solid;
 }
 
 /*** STATES ***/
 
 /*** STYLES ***/
+
+a {
+  cursor: pointer;
+}
+
+.layout-divider {
+  height: var(--spacing-gutter-primary);
+  width: 100%;
+}

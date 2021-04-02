@@ -450,12 +450,22 @@ html,
 body,
 #app {
   height: 100%;
+  // font-size: 2rem;
+  // font-size: 0.9rem;
 }
 
 body {
   // These make some fonts lighter. Just the way they look in Figma.
   -webkit-font-smoothing: antialiased; // Chrome & Safari
   -moz-osx-font-smoothing: grayscale; // Firefox
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+a {
+  padding: 0;
 }
 
 a,
@@ -467,7 +477,6 @@ a:focus {
   text-decoration: none;
   outline: none;
   color: initial;
-  padding: 0;
 }
 
 button,

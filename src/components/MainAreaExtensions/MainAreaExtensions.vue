@@ -1,5 +1,5 @@
 <template lang="pug">
-#content-area
+#main-area-extensions
 </template>
 
 <script>
@@ -9,9 +9,9 @@
 </script>
 
 <style lang="scss" scoped>
-  #content-area {
+  #main-area-extensions {
+    height: 100%;
     width: 100%;
-    height: inherit;
-    background-color: purple;
+    background-color: orange;
   }
 </style>

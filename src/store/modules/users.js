@@ -14,7 +14,7 @@ const actions = {
       const response = await getCurrentUser()
       commit("setCurrentUser", response.data.data.getCurrentUser)
     } catch (error) {
-      console.log("Error trying to get user data!", error)
+      console.error("Error trying to get user data!", error)
     }
   },
 }
