@@ -3,8 +3,13 @@
   .top-pane
     button.collapse-wrapper(@click="toggleSidebar", :class="cls")
       .icon-expand-arrow-2
+    router-view(name="tabTopPane", :currentUser="currentUser")
+
   .layout-divider
+
   .bottom-pane
+    router-view(name="tabBottomPane", :currentUser="currentUser")
+
   .layout-divider
 </template>
 
@@ -13,6 +18,9 @@
   import { ref } from "vue"
 
   export default {
+    props: {
+      currentUser: Object,
+    },
     setup() {
       const emitter = getEmitter()
       let sidebarVisible = ref(true)
@@ -51,7 +59,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        border: var(--border-bg-part-0) var(--color-bg-1);
+        border: var(--border-part) var(--color-bg-1);
         background-color: var(--color-bg-7);
         border-radius: 50%;
         cursor: pointer;
@@ -76,7 +84,7 @@
 
         &.flipped {
           background-color: var(--color-primary);
-          border: var(--border-bg-part-0) var(--color-bg-7);
+          border: var(--border-part) var(--color-bg-7);
 
           > .icon-expand-arrow-2 {
             background-color: var(--color-bg-7);

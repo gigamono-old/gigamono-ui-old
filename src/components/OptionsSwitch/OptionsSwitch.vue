@@ -2,19 +2,29 @@
 ul.options-switch
     li.option(
       v-for="(option, idx) in options",
-      :class="{'selected': idx === 0 }"
+      :class="{ 'selected': idx == selectedIndex }"
+      @click="() => selectClicked(idx)"
     ) {{option}}
 </template>
 
 <script>
-  import { onMounted } from "vue"
+  import { onMounted, ref } from "vue"
 
   export default {
     props: {
       options: Array,
     },
     setup() {
-      onMounted(() => {})
+      let selectedIndex = ref(0)
+
+      const selectClicked = (idx) => {
+        selectedIndex.value = idx
+      }
+
+      return {
+        selectedIndex,
+        selectClicked,
+      }
     },
   }
 </script>
@@ -26,7 +36,6 @@ ul.options-switch
     margin-top: var(--spacing-sidebar-element-margin);
     background-color: var(--color-bg-5);
     display: flex;
-    font-family: var(--font-primary);
     align-items: center;
     font-size: 0.9rem;
     border-radius: var(--border-rad-xl);
@@ -40,21 +49,25 @@ ul.options-switch
       align-items: center;
       justify-content: center;
       border-radius: var(--border-rad-lg);
-      color: var(--color-text-4);
+      color: var(--color-text-5);
+      user-select: none;
+      font-size: 0.85rem;
 
       &.selected {
         font-weight: 700;
         background-color: var(--color-bg-7);
         box-shadow: var(--shadow-surround-sharp-down);
+        font-size: 0.9rem;
+        color: var(--color-text-4);
       }
 
       &:hover:not(.selected) {
-        background-color: var(--color-bg);
+        background-color: var(--color-bg-4);
+        color: var(--color-text);
       }
 
       &:active:not(.selected) {
         color: var(--color-text-0);
-        font-weight: 700;
       }
 
       &:not(:last-of-type) {

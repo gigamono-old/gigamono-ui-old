@@ -53,9 +53,9 @@
 
         > .name {
           margin-left: 0.8rem;
-          font-family: var(--font-primary); // TODO
           font-size: 0.8rem;
           text-transform: uppercase;
+          user-select: none;
         }
       }
     }
@@ -64,7 +64,7 @@
       width: 100%;
       height: 2.25rem;
       background-color: var(--color-bg-7);
-      border-bottom: var(--border-bg-part-0) var(--color-bg);
+      border-bottom: var(--border-part) var(--color-bg);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -77,18 +77,19 @@
         justify-content: flex-start;
 
         > .icon-long-arrow {
-          width: 1.1rem;
+          height: 1.375rem;
+          width: 1.375rem;
           background-color: var(--color-primary-2);
         }
 
         > .destination {
           font-size: 0.7rem;
-          font-family: var(--font-primary); // TODO
+          font-weight: 700; // TODO
           letter-spacing: 0.0625rem;
-          margin-left: 0.5rem;
+          margin-left: 0.75rem;
           text-transform: uppercase;
           color: var(--color-primary-2);
-          font-weight: 900;
+          user-select: none;
         }
       }
 

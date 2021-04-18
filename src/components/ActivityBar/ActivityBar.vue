@@ -37,17 +37,20 @@ aside#activity-bar
       ActivityBarShortcut,
     },
     props: {
-      layoutPreferences: Object,
+      currentUser: Object,
     },
     setup(props) {
       // Getting shortcuts information from props.
       const event = reactive({
-        activityBarMainShortcuts: computed(
-          () => props.layoutPreferences && props.layoutPreferences.activityBarMainShortcuts
-        ),
-        activityBarOtherShortcuts: computed(
-          () => props.layoutPreferences && props.layoutPreferences.activityBarOtherShortcuts
-        ),
+        layoutPreferences: computed(() => {
+          return props.currentUser && props.currentUser.layoutPreferences
+        }),
+        activityBarMainShortcuts: computed(() => {
+          return event.layoutPreferences && event.layoutPreferences.activityBarMainShortcuts
+        }),
+        activityBarOtherShortcuts: computed(() => {
+          return event.layoutPreferences && event.layoutPreferences.activityBarOtherShortcuts
+        }),
       })
 
       return { ...toRefs(event) }

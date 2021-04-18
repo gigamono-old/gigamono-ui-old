@@ -33,12 +33,13 @@
       height: 100%;
       margin-left: 0.5rem;
       color: var(--color-text);
-      font-family: var(--font-primary);
       font-size: 1rem;
       z-index: 2;
+      font-family: var(--font-primary);
 
       &::placeholder {
-        color: var(--color-text-8);
+        color: var(--color-bg-1);
+        font-family: var(--font-primary);
       }
     }
 
@@ -55,10 +56,10 @@
 
     &:hover,
     &:focus-within {
-      background-color: var(--color-bg);
+      background-color: var(--color-bg-4);
 
       > .border-box {
-        border: var(--border-bg-part-0) var(--color-bg-1);
+        border: var(--border-part) var(--color-bg-1);
       }
     }
   }

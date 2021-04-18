@@ -1,7 +1,7 @@
 <template lang="pug">
 router-link.bend(:to="route")
-  .wrapper(ref="wrapperRef")
-    .icon(ref="iconRef")
+  .wrapper(ref="wrapperElement")
+    .icon(ref="iconElement")
 </template>
 
 <script>
@@ -17,8 +17,8 @@ router-link.bend(:to="route")
       const route = "/" + props.route
       const filledIconName = `icon-${props.iconName}`
       const outlinedIconName = `${filledIconName}-outline`
-      const iconRef = ref(null)
-      const wrapperRef = ref(null)
+      const iconElement = ref(null)
+      const wrapperElement = ref(null)
       const routerPath = computed(() => router.currentRoute.value.path)
 
       const w = () =>
@@ -26,30 +26,28 @@ router-link.bend(:to="route")
           // If the current route is the same as this element associated route, change styles as appropriate.
           if (routerPath.value.startsWith(route)) {
             // Change to filled icon and change icon color.
-            iconRef.value.classList.remove(outlinedIconName)
-            iconRef.value.classList.add(filledIconName)
-            iconRef.value.style.backgroundColor = "white"
-            // Add .highlighted class to .wrapper and change color.
-            wrapperRef.value.classList.add("highlighted")
-            wrapperRef.value.style.backgroundColor = "var(--color-primary)"
+            iconElement.value.classList.remove(outlinedIconName)
+            iconElement.value.classList.add(filledIconName)
+            iconElement.value.style.backgroundColor = "white"
+            // Add .highlighted class.
+            wrapperElement.value.classList.add("highlighted")
           } else {
             // Change to outline icon and change icon color.
-            iconRef.value.classList.add(outlinedIconName)
-            iconRef.value.classList.remove(filledIconName)
-            iconRef.value.style.backgroundColor = "var(--color-text-5)"
-            // Remove .highlighted class to .wrapper and revert color.
-            wrapperRef.value.classList.remove("highlighted")
-            wrapperRef.value.style.backgroundColor = "initial"
+            iconElement.value.classList.add(outlinedIconName)
+            iconElement.value.classList.remove(filledIconName)
+            iconElement.value.style.backgroundColor = "var(--color-text-5)"
+            // Remove .highlighted class.
+            wrapperElement.value.classList.remove("highlighted")
           }
         })
 
       onMounted(() => {
         // Use outline icon on mount.
-        iconRef.value.classList.add(outlinedIconName)
+        iconElement.value.classList.add(outlinedIconName)
         w()
       })
 
-      return { router, route, iconRef, wrapperRef, routerPath }
+      return { router, route, iconElement, wrapperElement, routerPath }
     },
   }
 </script>
@@ -68,7 +66,7 @@ router-link.bend(:to="route")
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: var(--border-rad-md);
+      border-radius: var(--border-rad-lg);
 
       > .icon {
         width: 1rem;
@@ -76,12 +74,17 @@ router-link.bend(:to="route")
         box-sizing: inherit;
         background-color: var(--color-text-4);
       }
+
+      &.highlighted {
+        background-color: var(--color-primary);
+        box-shadow: var(--shadow-inset);
+      }
     }
 
     // Hover only works on .wrapper child with .highlighed class.
     &:hover > :not([class*="highlighted"]) {
       box-shadow: var(--shadow-primary);
-      border: var(--border-bg-part-0) var(--color-bg);
+      border: var(--border-part) var(--color-bg);
     }
   }
 </style>

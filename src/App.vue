@@ -1,12 +1,12 @@
 <template lang="pug">
-.container
-  activity-bar.activity-bar(:layoutPreferences="layoutPreferences")
-  content.content
+.app
+  activity-bar.activity-bar(:currentUser="currentUser")
+  content.content(:currentUser="currentUser")
 </template>
 
 <script>
   import store from "@/store"
-  import { computed, toRefs, reactive } from "vue"
+  import { computed } from "vue"
   import ActivityBar from "@/components/ActivityBar/ActivityBar"
   import Content from "@/views/Content/Content"
 
@@ -18,25 +18,22 @@
     setup() {
       store.dispatch("getCurrentUser") // Fetch current user data.
 
-      const event = reactive({
-        layoutPreferences: computed(() => {
-          const user = store.getters.currentUser
-          return user && user.layoutPreferences
-        }),
+      const currentUser = computed(() => {
+        return store.getters.currentUser
       })
 
-      return { ...toRefs(event) }
+      return { currentUser }
     },
   }
 </script>
 
 <style lang="scss">
   // Making these styles available in children elements.
-  @import "@/assets/styles/reset.scss";
   @import "@/assets/styles/styles.scss";
+  @import "@/assets/styles/reset.scss";
   @import "@/assets/styles/animations.scss";
 
-  .container {
+  .app {
     height: inherit;
     display: grid;
     grid-template-areas: "activity-bar content";

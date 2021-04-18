@@ -10,25 +10,37 @@
     search-bar
 
     collection
-      collapsible-list(title="Apps")
-        li One
-        li Two
-        li Three
-        li Four
+      collapsible(title="Integrations")
+        ul.list
+          li(v-for="integration in integrations")
+            app-card(
+              :name="integration.name",
+              :id="integration.id",
+              :description="integration.description",
+              :avatar32URL="integration.avatar32URL",
+            )
 
-      collapsible-list(title="Builtins")
-        li One
-        li Two
-        li Three
-        li Four
+      collapsible(title="Builtins")
+        ul.list
+          li(v-for="builtin in builtins")
+            app-card(
+              :name="builtin.name",
+              :id="builtin.id",
+              :description="builtin.description",
+              :avatar32URL="builtin.avatar32URL",
+              :isBuiltin="true"
+            )
 </template>
 
 <script>
+  import store from "@/store"
   import SidebarHeader from "@/components/SidebarHeader/SidebarHeader"
   import SearchBar from "@/components/SearchBar/SearchBar"
   import OptionsSwitch from "@/components/OptionsSwitch/OptionsSwitch"
   import Collection from "@/components/Collection/Collection"
-  import CollapsibleList from "@/components/CollapsibleList/CollapsibleList"
+  import Collapsible from "@/components/Collapsible/Collapsible"
+  import AppCard from "@/components/AppCard/AppCard"
+  import { computed, toRefs, reactive } from "vue"
 
   export default {
     components: {
@@ -36,9 +48,26 @@
       SearchBar,
       OptionsSwitch,
       Collection,
-      CollapsibleList,
+      Collapsible,
+      AppCard,
     },
-    setup() {},
+    setup() {
+      store.dispatch("getCurrentUserIntegrations") // Fetch current user integrations.
+
+      const event = reactive({
+        currentUserIntegrations: computed(() => {
+          return store.getters.currentUserIntegrations
+        }),
+        integrations: computed(() => {
+          return event.currentUserIntegrations && event.currentUserIntegrations.integrations
+        }),
+        builtins: computed(() => {
+          return event.currentUserIntegrations && event.currentUserIntegrations.builtins
+        }),
+      })
+
+      return { ...toRefs(event) }
+    },
   }
 </script>
 
@@ -55,6 +84,21 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      .list {
+        width: 100%;
+        margin: 0.5rem 0;
+
+        > li {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+
+          &:not(:first-of-type) {
+            margin-top: 0.5rem;
+          }
+        }
+      }
     }
   }
 </style>

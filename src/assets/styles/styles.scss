@@ -24,14 +24,15 @@ $icons: (
   expand-arrow,
   expand-arrow-2,
   long-arrow,
-  search
+  search,
+  everything,
+  plus,
+  notification,
+  drag
 );
 
 @each $iconName in $icons {
   .icon-#{$iconName} {
-    -webkit-mask-image: url("~@/assets/icons/icon-#{$iconName}.svg");
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
     mask-image: url("~@/assets/icons/icon-#{$iconName}.svg");
     mask-repeat: no-repeat;
     mask-size: 100% 100%;
@@ -44,6 +45,7 @@ $icons: (
 /*** FONTS ***/
 $fonts: (
   primary: AndikaNewBasic,
+  primary-bold: AndikaNewBasicBold,
 );
 
 @each $key, $fontName in $fonts {
@@ -61,7 +63,6 @@ $fonts: (
 
 /*** COLORS ***/
 :root {
-  --color-primary: #0ab6ff;
   --color-primary-0: #044966;
   --color-primary-1: #066d99;
   --color-primary-2: #0892cc;
@@ -71,8 +72,8 @@ $fonts: (
   --color-primary-6: #9de2ff;
   --color-primary-7: #cef0ff;
   --color-primary-8: #e7f8ff;
+  --color-primary: var(--color-primary-3);
 
-  --color-text: #292d34;
   --color-text-0: #1d1f24;
   --color-text-1: #21242a;
   --color-text-2: #25292f;
@@ -82,8 +83,8 @@ $fonts: (
   --color-text-6: #696c71;
   --color-text-7: #7f8185;
   --color-text-8: #94969a;
+  --color-text: var(--color-text-3);
 
-  --color-bg: #e3e7e9;
   --color-bg-0: #c8d0d4;
   --color-bg-1: #d1d8db;
   --color-bg-2: #dadfe2;
@@ -92,33 +93,38 @@ $fonts: (
   --color-bg-5: #f1f2f4;
   --color-bg-6: #f6f7f8;
   --color-bg-7: #ffffff;
+  --color-bg: var(--color-bg-3);
 
-  --color-primary-alpha: #055b8027;
-  --color-primary-alpha-0: #055b8010;
-  --color-primary-alpha-1: #055b8017;
-  --color-primary-alpha-2: #055b8020;
-  --color-primary-alpha-3: #055b8025;
-  --color-primary-alpha-4: #055b8030;
-  --color-primary-alpha-5: #055b8037;
-  --color-primary-alpha-6: #055b8040;
-  --color-primary-alpha-7: #055b8050;
+  --color-primary-alpha-rgb: 0, 31, 45;
+  --color-primary-alpha-0: rgba(var(--color-primary-alpha-rgb), 0.5);
+  --color-primary-alpha-1: rgba(var(--color-primary-alpha-rgb), 0.4);
+  --color-primary-alpha-2: rgba(var(--color-primary-alpha-rgb), 0.3);
+  --color-primary-alpha-3: rgba(var(--color-primary-alpha-rgb), 0.2);
+  --color-primary-alpha-4: rgba(var(--color-primary-alpha-rgb), 0.15);
+  --color-primary-alpha-5: rgba(var(--color-primary-alpha-rgb), 0.1);
+  --color-primary-alpha-6: rgba(var(--color-primary-alpha-rgb), 0.05);
+  --color-primary-alpha: var(--color-primary-alpha-3);
 
   --color-bg-dot: #e5e5e5;
 
-  --color-secondary: #E887FF;
+  --color-secondary: #e887ff;
 
   --color-brand-primary: var(--color-primary);
   --color-brand-secondary: var(--color-secondary);
+  --color-error: #eb5757;
 }
 
 /*** GRADIENTS ***/
 
 /*** SHADOWS ***/
 :root {
-  --shadow-primary: 0 0.1rem 0.2rem 0.0625rem var(--color-primary-alpha-1);
-  --shadow-surround: 0 0 0.25rem 0.0625rem var(--color-primary-alpha-1);
-  --shadow-surround-sharp-down: 0 0 0.125rem var(--color-primary-alpha-6),
-    0 0.3125rem 0.25rem var(--color-primary-alpha-0);
+  --shadow-primary: 0 0.0625rem 0.125rem 0.0625rem var(--color-primary-alpha-5);
+  --shadow-primary-blur: 0 0.0625rem 0.3125rem var(--color-primary-alpha-5);
+  --shadow-surround: 0 0 0.25rem 0.0625rem var(--color-primary-alpha);
+  --shadow-surround-sharp: 0 0 0.125rem var(--color-primary-alpha);
+  --shadow-surround-sharp-down: var(--shadow-surround-sharp),
+    0 0.3125rem 0.0625rem var(--color-primary-alpha-6);
+  --shadow-inset: inset 0 0 0.3125rem var(--color-primary-alpha-2);
 }
 
 /*** THICKNESS ***/
@@ -139,6 +145,8 @@ $fonts: (
   --spacing-activity-bar-element-margin: 1rem;
   --spacing-sidebar-element-margin: 1rem;
   --spacing-sidebar-element-width: calc(100% - 2rem);
+  --spacing-sidebar-draggable-element-width: calc(100% - 0.625rem);
+  --spacing-tab-element-margin: 0.75rem;
 }
 
 /*** BORDER ***/
@@ -151,12 +159,22 @@ $fonts: (
   --border-rad-sm: 0.1875rem;
   --border-rad-xs: 0.125rem;
 
-  --border-bg-part-0: 0.0625rem solid;
+  --border-part: 0.0625rem solid;
+  --border-part-2: 0.09375rem solid;
 }
 
-/*** STATES ***/
+/*** SIZING ***/
+
+:root {
+  --sizing-zoom-level: 1rem;
+}
 
 /*** STYLES ***/
+
+body * {
+  box-sizing: border-box;
+  font-family: var(--font-primary);
+}
 
 a {
   cursor: pointer;
@@ -165,4 +183,10 @@ a {
 .layout-divider {
   height: var(--spacing-gutter-primary);
   width: 100%;
+}
+
+.v-layout-divider {
+  height: 100%;
+  width: var(--spacing-gutter-primary);
+  background-color: var(--color-bg);
 }

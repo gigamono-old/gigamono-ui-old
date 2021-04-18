@@ -446,22 +446,21 @@ textarea {
 }
 
 /*** CUSTOM ***/
+
+html {
+  font-size: var(--sizing-zoom-level);
+}
+
 html,
 body,
 #app {
   height: 100%;
-  // font-size: 2rem;
-  // font-size: 0.9rem;
 }
 
 body {
   // These make some fonts lighter. Just the way they look in Figma.
   -webkit-font-smoothing: antialiased; // Chrome & Safari
   -moz-osx-font-smoothing: grayscale; // Firefox
-}
-
-body * {
-  box-sizing: border-box;
 }
 
 a {

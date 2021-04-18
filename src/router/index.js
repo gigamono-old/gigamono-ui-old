@@ -7,6 +7,7 @@ import SidebarDocuments from "@/components/SidebarDocuments/SidebarDocuments"
 import SidebarExtensions from "@/components/SidebarExtensions/SidebarExtensions"
 import SidebarSettings from "@/components/SidebarSettings/SidebarSettings"
 import SidebarDeveloper from "@/components/SidebarDeveloper/SidebarDeveloper"
+
 import MainAreaWorkflows from "@/components/MainAreaWorkflows/MainAreaWorkflows"
 import MainAreaDashboard from "@/components/MainAreaDashboard/MainAreaDashboard"
 import MainAreaDesign from "@/components/MainAreaDesign/MainAreaDesign"
@@ -15,11 +16,18 @@ import MainAreaExtensions from "@/components/MainAreaExtensions/MainAreaExtensio
 import MainAreaSettings from "@/components/MainAreaSettings/MainAreaSettings"
 import MainAreaDeveloper from "@/components/MainAreaDeveloper/MainAreaDeveloper"
 
+import TabTopPaneWorkflows from "@/components/TabTopPaneWorkflows/TabTopPaneWorkflows"
+
+import TabBottomPaneWorkflows from "@/components/TabBottomPaneWorkflows/TabBottomPaneWorkflows"
+
 const routes = [
   {
     path: "/",
     name: "default",
-    component: null,
+    components: {
+      sidebar: SidebarDashboard,
+      mainArea: MainAreaDashboard,
+    },
   },
   {
     path: "/dashboard",
@@ -35,6 +43,8 @@ const routes = [
     components: {
       sidebar: SidebarWorkflows,
       mainArea: MainAreaWorkflows,
+      tabTopPane: TabTopPaneWorkflows,
+      tabBottomPane: TabBottomPaneWorkflows,
     },
   },
   {

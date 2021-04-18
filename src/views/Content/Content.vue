@@ -2,7 +2,7 @@
 main#content
   sidebar.sidebar
   main-area.main-area
-  tab.tab
+  tab.tab(:currentUser="currentUser")
 </template>
 
 <script>
@@ -12,6 +12,9 @@ main#content
 
   export default {
     components: { Tab, Sidebar, MainArea },
+    props: {
+      currentUser: Object,
+    },
     setup() {},
   }
 </script>
@@ -22,10 +25,10 @@ main#content
     width: inherit;
     display: grid;
     grid-template-areas:
-      "sidebar     tab"
+      "sidebar tab"
       "sidebar main-area";
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
 
     > .tab {
       grid-area: tab;
