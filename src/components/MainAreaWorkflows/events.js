@@ -80,12 +80,14 @@ const calculateContainerBoundsFromDropPoint = (
   let newWidth = containerBounds.width
   let newHeight = containerBounds.height
 
+  // If drop point falls inside the padding area on either side, extend width.
   if (latestCursorDropPoint.x > containerBounds.width - paddings.x) {
     newWidth = latestCursorDropPoint.x + paddings.x
   } else if (latestCursorDropPoint.x < paddings.x) {
     newWidth = containerBounds.width + (paddings.x - latestCursorDropPoint.x)
   }
 
+  // If drop point falls inside the padding area at the top or bottom, extend height.
   if (latestCursorDropPoint.y > containerBounds.height - paddings.y) {
     newHeight = latestCursorDropPoint.y + paddings.y
   } else if (latestCursorDropPoint.y < paddings.y) {
@@ -109,6 +111,7 @@ const calculateContainerBoundsFromSteps = (steps, containerElement, paddings) =>
   let topmost = steps.get(0).cursorDropPoint.y
   let bottommost = steps.get(0).cursorDropPoint.y
 
+  // Get the extremes
   for (let [_, step] of steps) {
     const { x, y } = step.cursorDropPoint
     if (x < leftmost) {
@@ -123,28 +126,12 @@ const calculateContainerBoundsFromSteps = (steps, containerElement, paddings) =>
     }
   }
 
-  let result = calculateContainerBoundsFromDropPoint(
-    { x: leftmost, y: height - paddings.x },
+  // Form a drop point from the extremes and calculate container bounds.
+  return calculateContainerBoundsFromDropPoint(
+    { x: rightmost - leftmost, y: bottommost - leftmost },
     { x, y, width, height },
-    paddings.x
+    paddings
   )
-  result = calculateContainerBoundsFromDropPoint(
-    { x: rightmost, y: height - paddings.x },
-    result,
-    paddings.x
-  )
-  result = calculateContainerBoundsFromDropPoint(
-    { x: width - paddings.y, y: topmost },
-    result,
-    paddings.y
-  )
-  result = calculateContainerBoundsFromDropPoint(
-    { x: width - paddings.y, y: bottommost },
-    result,
-    paddings.y
-  )
-
-  return result
 }
 
 export { onDrop, steps }
