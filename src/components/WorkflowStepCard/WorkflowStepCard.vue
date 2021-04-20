@@ -53,7 +53,7 @@
   .workflow-step-card {
     position: absolute;
     width: var(--spacing-step-card-width);
-    background-color: var(--color-bg-7);
+    background-color: var(--color-bg-8);
     border-radius: var(--border-rad-xl);
     border: var(--border-part) var(--color-bg-2);
     user-select: none;
@@ -84,7 +84,7 @@
           height: 1.25rem;
           top: -0.25rem;
           left: -0.25rem;
-          border: var(--border-part-0) var(--color-bg-7);
+          border: var(--border-part-0) var(--color-bg-8);
           border-radius: 50%;
           background-color: var(--color-error);
         }
@@ -139,7 +139,7 @@
             > .icon-help {
               width: 0.5rem;
               height: 0.5rem;
-              background-color: var(--color-bg-7);
+              background-color: var(--color-bg-8);
             }
 
             &:hover {
@@ -171,7 +171,7 @@
           position: absolute;
           font-size: 0.5rem;
           padding: 0.25rem;
-          background-color: var(--color-bg-7);
+          background-color: var(--color-bg-8);
           border-bottom-left-radius: var(--border-rad-xs);
           border-bottom-right-radius: var(--border-rad-xs);
           color: var(--color-text-6);

@@ -230,7 +230,7 @@
           background-color: var(--color-error);
           top: 0.0625rem;
           right: 0.0625rem;
-          border: var(--border-part) var(--color-bg-7);
+          border: var(--border-part) var(--color-bg-8);
         }
 
         &:hover {

@@ -34,7 +34,7 @@
     > .top-wrapper {
       width: 100%;
       height: 3rem;
-      background-color: var(--color-bg-7);
+      background-color: var(--color-bg-8);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -64,7 +64,7 @@
     > .nav {
       width: 100%;
       height: 2.25rem;
-      background-color: var(--color-bg-7);
+      background-color: var(--color-bg-8);
       border-bottom: var(--border-part) var(--color-bg);
       display: flex;
       align-items: center;

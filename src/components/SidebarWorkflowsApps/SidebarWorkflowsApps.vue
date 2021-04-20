@@ -38,7 +38,7 @@
 
     > .main {
       flex-grow: 1;
-      background-color: var(--color-bg-7);
+      background-color: var(--color-bg-8);
     }
   }
 </style>

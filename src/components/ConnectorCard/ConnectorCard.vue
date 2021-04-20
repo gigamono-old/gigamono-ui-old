@@ -64,7 +64,7 @@
 
     > .app-icon-wrapper {
       padding: 0.6rem;
-      background-color: var(--color-bg-7);
+      background-color: var(--color-bg-8);
       border-radius: 50%;
       border: var(--border-part) var(--color-bg);
       margin-left: 0.125rem;

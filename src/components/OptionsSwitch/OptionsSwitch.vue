@@ -32,6 +32,7 @@ ul.options-switch
 <style lang="scss" scoped>
   ul.options-switch {
     height: 1.8rem;
+    min-height: 1.8rem; // Needed to maintain height on Firefox at different scales.
     background-color: var(--color-bg-6);
     display: flex;
     align-items: center;
@@ -53,7 +54,7 @@ ul.options-switch
 
       &.selected {
         font-weight: 700;
-        background-color: var(--color-bg-7);
+        background-color: var(--color-bg-8);
         box-shadow: var(--shadow-surround-sharp-down);
         font-size: 0.875rem;
         color: var(--color-text-4);

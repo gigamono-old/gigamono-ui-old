@@ -50,7 +50,7 @@
       height: 3rem;
       display: flex;
       align-items: center;
-      background-color: var(--color-bg-7);
+      background-color: var(--color-bg-8);
 
       > .collapse-wrapper {
         width: 1.25rem;
@@ -60,7 +60,7 @@
         align-items: center;
         justify-content: center;
         border: var(--border-part) var(--color-bg-1);
-        background-color: var(--color-bg-7);
+        background-color: var(--color-bg-8);
         border-radius: 50%;
         cursor: pointer;
 
@@ -84,10 +84,10 @@
 
         &.flipped {
           background-color: var(--color-primary);
-          border: var(--border-part) var(--color-bg-7);
+          border: var(--border-part) var(--color-bg-8);
 
           > .icon-expand-arrow-2 {
-            background-color: var(--color-bg-7);
+            background-color: var(--color-bg-8);
             transform: rotate(-90deg);
           }
 
@@ -100,7 +100,7 @@
 
     .bottom-pane {
       flex-grow: 1;
-      background-color: var(--color-bg-7);
+      background-color: var(--color-bg-8);
     }
   }
 </style>

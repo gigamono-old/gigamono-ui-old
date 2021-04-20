@@ -93,7 +93,7 @@ li.workflow-step-card-integration-select
           height: 1.25rem;
           top: -0.25rem;
           left: -0.25rem;
-          border: var(--border-part-0) var(--color-bg-7);
+          border: var(--border-part-0) var(--color-bg-8);
           border-radius: 50%;
           background-color: var(--color-error);
         }
@@ -109,7 +109,7 @@ li.workflow-step-card-integration-select
         margin-left: 0.625rem;
         font-size: 0.8125rem;
         padding: 0.3125rem 0.5rem;
-        color: var(--color-bg-7);
+        color: var(--color-bg-8);
         background: var(--gradient-secondary-primary);
         border-radius: var(--border-rad-md);
       }
@@ -156,7 +156,7 @@ li.workflow-step-card-integration-select
         margin-top: var(--spacing-step-card-element-margin);
 
         > .grid-list:not(:first-of-type) {
-          margin-top: calc(var(--spacing-step-card-element-margin) * 2);
+          margin-top: var(--spacing-step-card-element-margin);
         }
       }
 

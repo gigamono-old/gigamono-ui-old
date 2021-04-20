@@ -33,6 +33,9 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    background-color: var(--color-bg-7);
+    padding: var(--spacing-step-card-element-margin) 0;
+    border-radius: var(--border-rad-xl);
 
     > .title {
       font-size: 0.8375rem;
@@ -61,6 +64,7 @@
           border-radius: var(--border-rad-xl);
           border: var(--border-part) var(--color-bg);
           user-select: none;
+          background-color: var(--color-bg-8);
 
           > img {
             width: 2rem;

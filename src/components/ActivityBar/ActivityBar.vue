@@ -72,7 +72,7 @@ aside#activity-bar
     > .brand {
       height: 3rem;
       width: 100%;
-      background-color: var(--color-bg-7);
+      background-color: var(--color-bg-8);
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -88,7 +88,7 @@ aside#activity-bar
       width: 100%;
       display: flex;
       flex-direction: column;
-      background-color: var(--color-bg-7);
+      background-color: var(--color-bg-8);
 
       > li {
         width: 100%;
