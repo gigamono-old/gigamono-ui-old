@@ -2,29 +2,33 @@
 .search-bar
   .border-box
   .icon-search
-  input(placeholder="Lorem ipsum dolor")
+  input(:placeholder="placeholder")
 </template>
 
 <script>
-  export default {}
+  export default {
+    props: {
+      placeholder: {
+        type: String,
+        default: "Search",
+      },
+    },
+  }
 </script>
 
 <style lang="scss" scoped>
   .search-bar {
     height: 1.8rem;
-    width: var(--spacing-sidebar-element-width);
-    margin-top: var(--spacing-sidebar-element-margin);
-    background-color: var(--color-bg-5);
+    background-color: var(--color-bg-6);
     display: flex;
     align-items: center;
     border-radius: var(--border-rad-xl);
     padding: 0 0.625rem;
-    cursor: pointer;
     position: relative;
 
     > .icon-search {
       width: 0.9rem;
-      background-color: var(--color-text-7);
+      background-color: var(--color-text-8);
       z-index: 1;
     }
 
@@ -32,8 +36,7 @@
       flex: 1 0 auto;
       height: 100%;
       margin-left: 0.5rem;
-      color: var(--color-text);
-      font-size: 1rem;
+      font-size: 0.8125rem;
       z-index: 2;
       font-family: var(--font-primary);
 
@@ -56,10 +59,10 @@
 
     &:hover,
     &:focus-within {
-      background-color: var(--color-bg-4);
+      background-color: var(--color-bg-5);
 
       > .border-box {
-        border: var(--border-part) var(--color-bg-1);
+        border: var(--border-part) var(--color-bg-2);
       }
     }
   }

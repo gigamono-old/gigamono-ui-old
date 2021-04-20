@@ -1,5 +1,5 @@
 <template lang="pug">
-li.collapsible
+.collapsible
   .head(@click="toggleContent", :class="cls")
     .container
       .title {{title}}
@@ -14,7 +14,6 @@ li.collapsible
   export default {
     props: {
       title: String,
-      list: Array,
     },
     setup() {
       const contentVisible = ref(true)
@@ -35,7 +34,7 @@ li.collapsible
 </script>
 
 <style lang="scss" scoped>
-  li.collapsible {
+  .collapsible {
     display: flex;
     flex-direction: column;
     border-top: var(--border-part) var(--color-bg-4);
@@ -47,7 +46,7 @@ li.collapsible
       cursor: pointer;
 
       .container {
-        width: var(--spacing-sidebar-element-width);
+        width: var(--spacing-general-element-width);
         height: 100%;
         display: flex;
         align-items: center;

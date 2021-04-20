@@ -5,10 +5,10 @@
   .icon-drag
 
   .app-icon-wrapper
-    .container
-      img.app-icon(v-if="!isBuiltin", :src="avatar32URL")
-      svg.app-icon(v-else="isBuiltin")
-        use(:href="`${avatar32URL}#${name.toLowerCase()}`")
+    //- .container
+    img.app-icon(v-if="!isBuiltin", :src="avatar32URL")
+    svg.app-icon(v-else)
+      use(:href="`${avatar32URL}#${name.toLowerCase()}`")
 
   .app-details
     .name {{ name }}
@@ -37,8 +37,6 @@
             id: props.id,
           })
         )
-
-        console.log(">>> Drag Started", event)
       }
 
       return { onDragStart }
@@ -65,29 +63,24 @@
     }
 
     > .app-icon-wrapper {
-      padding: 0.25rem;
+      padding: 0.6rem;
       background-color: var(--color-bg-7);
       border-radius: 50%;
       border: var(--border-part) var(--color-bg);
       margin-left: 0.125rem;
       user-select: none;
 
-      > .container {
-        border-radius: 50%;
-        padding: 0.3125rem;
+      > img {
+        width: 1.75rem;
+        height: 1.75rem;
+        border-radius: var(--border-rad-lg);
+      }
 
-        > img {
-          width: 2rem;
-          height: 2rem;
-          border-radius: var(--border-rad-lg);
-        }
-
-        > svg {
-          width: 2rem;
-          height: 2rem;
-          fill: var(--color-text);
-          border-radius: var(--border-rad-lg);
-        }
+      > svg {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: var(--color-text);
+        border-radius: var(--border-rad-lg);
       }
     }
 
@@ -140,7 +133,7 @@
         }
 
         > .description {
-          color: var(--color-text);
+          color: var(--color-text-5);
         }
       }
 
@@ -152,9 +145,5 @@
     &:active {
       cursor: grabbing;
     }
-
-    // &:-moz-drag-over {
-    //   cursor: grabbing;
-    // }
   }
 </style>

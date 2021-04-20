@@ -40,7 +40,7 @@
       justify-content: center;
 
       > .container {
-        width: var(--spacing-sidebar-element-width);
+        width: var(--spacing-general-element-width);
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -56,6 +56,7 @@
           font-size: 0.8rem;
           text-transform: uppercase;
           user-select: none;
+          letter-spacing: 0.03125rem;
         }
       }
     }
@@ -71,7 +72,7 @@
       cursor: pointer;
 
       > .container {
-        width: var(--spacing-sidebar-element-width);
+        width: var(--spacing-general-element-width);
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -84,7 +85,7 @@
 
         > .destination {
           font-size: 0.7rem;
-          font-weight: 700; // TODO
+          font-weight: 700;
           letter-spacing: 0.0625rem;
           margin-left: 0.75rem;
           text-transform: uppercase;

@@ -5,25 +5,25 @@
 
   //- Main content
   .main
-    options-switch(:options="['All', 'Triggers', 'Actions']")
+    options-switch.options-switch(:options="['All', 'Triggers', 'Actions']")
 
-    search-bar
+    search-bar.search-bar
 
-    collection
-      collapsible(title="Integrations")
+    collection.collection
+      collapsible.collapsible(title="Integrations")
         ul.list
           li(v-for="integration in integrations")
-            app-card(
+            connector-card(
               :name="integration.name",
               :id="integration.id",
               :description="integration.description",
               :avatar32URL="integration.avatar32URL",
             )
 
-      collapsible(title="Builtins")
+      collapsible.collapsible(title="Builtins")
         ul.list
           li(v-for="builtin in builtins")
-            app-card(
+            connector-card(
               :name="builtin.name",
               :id="builtin.id",
               :description="builtin.description",
@@ -39,7 +39,7 @@
   import OptionsSwitch from "@/components/OptionsSwitch/OptionsSwitch"
   import Collection from "@/components/Collection/Collection"
   import Collapsible from "@/components/Collapsible/Collapsible"
-  import AppCard from "@/components/AppCard/AppCard"
+  import ConnectorCard from "@/components/ConnectorCard/ConnectorCard"
   import { computed, toRefs, reactive } from "vue"
 
   export default {
@@ -49,7 +49,7 @@
       OptionsSwitch,
       Collection,
       Collapsible,
-      AppCard,
+      ConnectorCard,
     },
     setup() {
       store.dispatch("getCurrentUserIntegrations") // Fetch current user integrations.
@@ -84,8 +84,15 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      overflow-y: auto;
 
-      .list {
+      > .options-switch,
+      > .search-bar {
+        width: var(--spacing-general-element-width);
+        margin-top: var(--spacing-sidebar-element-margin);
+      }
+
+      > .collection > .collapsible ul.list {
         width: 100%;
         margin: 0.5rem 0;
 

@@ -32,9 +32,7 @@ ul.options-switch
 <style lang="scss" scoped>
   ul.options-switch {
     height: 1.8rem;
-    width: var(--spacing-sidebar-element-width);
-    margin-top: var(--spacing-sidebar-element-margin);
-    background-color: var(--color-bg-5);
+    background-color: var(--color-bg-6);
     display: flex;
     align-items: center;
     font-size: 0.9rem;
@@ -51,19 +49,18 @@ ul.options-switch
       border-radius: var(--border-rad-lg);
       color: var(--color-text-5);
       user-select: none;
-      font-size: 0.85rem;
+      font-size: 0.8125rem;
 
       &.selected {
         font-weight: 700;
         background-color: var(--color-bg-7);
         box-shadow: var(--shadow-surround-sharp-down);
-        font-size: 0.9rem;
+        font-size: 0.875rem;
         color: var(--color-text-4);
       }
 
       &:hover:not(.selected) {
         background-color: var(--color-bg-4);
-        color: var(--color-text);
       }
 
       &:active:not(.selected) {

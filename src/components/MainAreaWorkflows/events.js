@@ -1,5 +1,6 @@
 import store from "@/store"
 import { computed } from "vue"
+import { convertRemtoPxInt } from "@/utils/css"
 
 const steps = computed(() => store.getters.currentWorkflow.steps)
 
@@ -30,7 +31,10 @@ const calculateDropPoints = (containerElement, dropEvent) => {
 
   // Also, the dropped element is rendered starting from the tip of the cursor.
   // We are going to use the dropped element width to make sure the center is at the cursor.
-  const droppedElementWidth = 16 * 25 // 16 * 25rem (width in CSS) = 400px
+  const droppedElementWidthRem = getComputedStyle(document.documentElement).getPropertyValue(
+    "--spacing-step-card-width"
+  )
+  const droppedElementWidth = convertRemtoPxInt(droppedElementWidthRem)
   const height = 16 * 3 // 16 * 3rem (no reason) = 48px
 
   const actualDropPoint = {
@@ -80,7 +84,7 @@ const calculateContainerBoundsFromDropPoint = (
   let newWidth = containerBounds.width
   let newHeight = containerBounds.height
 
-  // If drop point falls inside the padding area on either side, extend width.
+  // If drop point falls inside the padding area on right or left side, extend width.
   if (latestCursorDropPoint.x > containerBounds.width - paddings.x) {
     newWidth = latestCursorDropPoint.x + paddings.x
   } else if (latestCursorDropPoint.x < paddings.x) {

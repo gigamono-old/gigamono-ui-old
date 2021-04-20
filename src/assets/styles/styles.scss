@@ -28,7 +28,10 @@ $icons: (
   everything,
   plus,
   notification,
-  drag
+  drag,
+  context-menu,
+  v-context-menu,
+  help
 );
 
 @each $iconName in $icons {
@@ -111,15 +114,30 @@ $fonts: (
 
   --color-brand-primary: var(--color-primary);
   --color-brand-secondary: var(--color-secondary);
+
   --color-error: #eb5757;
+  --color-success: #32dc76;
 }
 
 /*** GRADIENTS ***/
+:root {
+  --gradient-primary-secondary: linear-gradient(
+    to right,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  --gradient-secondary-primary: linear-gradient(
+    to right,
+    var(--color-secondary),
+    var(--color-primary)
+  );
+}
 
 /*** SHADOWS ***/
 :root {
   --shadow-primary: 0 0.0625rem 0.125rem 0.0625rem var(--color-primary-alpha-5);
   --shadow-primary-blur: 0 0.0625rem 0.3125rem var(--color-primary-alpha-5);
+  --shadow-primary-blur-2: 0 0.0625rem 0.3125rem 0.0625rem var(--color-primary-alpha-5);
   --shadow-surround: 0 0 0.25rem 0.0625rem var(--color-primary-alpha);
   --shadow-surround-sharp: 0 0 0.125rem var(--color-primary-alpha);
   --shadow-surround-sharp-down: var(--shadow-surround-sharp),
@@ -144,9 +162,12 @@ $fonts: (
   --spacing-gutter-primary: 0.125rem;
   --spacing-activity-bar-element-margin: 1rem;
   --spacing-sidebar-element-margin: 1rem;
-  --spacing-sidebar-element-width: calc(100% - 2rem);
+  --spacing-general-element-width: calc(100% - 2rem);
   --spacing-sidebar-draggable-element-width: calc(100% - 0.625rem);
   --spacing-tab-element-margin: 0.75rem;
+  --spacing-step-card-width: 28rem;
+  --spacing-step-card-border-margin: 0.3125rem;
+  --spacing-step-card-element-margin: 0.825rem;
 }
 
 /*** BORDER ***/
@@ -160,6 +181,8 @@ $fonts: (
   --border-rad-xs: 0.125rem;
 
   --border-part: 0.0625rem solid;
+  --border-part-0: 0.25rem solid;
+  --border-part-1: 0.125rem solid;
   --border-part-2: 0.09375rem solid;
 }
 
