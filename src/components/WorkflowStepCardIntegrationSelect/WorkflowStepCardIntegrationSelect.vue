@@ -1,6 +1,6 @@
 <template lang="pug">
 li.workflow-step-card-integration-select
-  // ABSTRACT
+  // TODO: ABSTRACT
   .head(v-if="expanded", @click="expand")
     // TODO: Dynamic
     .img-wrapper
@@ -42,17 +42,15 @@ li.workflow-step-card-integration-select
         expanded.value = !expanded.value
       }
 
-      store.dispatch("getCurrentUserIntegrations") // Fetch current user integrations.
-
       const event = reactive({
-        currentUserIntegrations: computed(() => {
-          return store.getters.currentUserIntegrations
+        workspaceIntegrations: computed(() => {
+          return store.getters.sessionUser?.workspaceIntegrations
         }),
         integrations: computed(() => {
-          return event.currentUserIntegrations && event.currentUserIntegrations.integrations
+          return event.workspaceIntegrations?.integrations
         }),
         builtins: computed(() => {
-          return event.currentUserIntegrations && event.currentUserIntegrations.builtins
+          return event.workspaceIntegrations?.builtins
         }),
       })
 

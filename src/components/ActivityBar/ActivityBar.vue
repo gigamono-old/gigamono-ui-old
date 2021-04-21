@@ -30,26 +30,20 @@ aside#activity-bar
   import BrandImage from "@/components/BrandImage/BrandImage"
   import ActivityBarShortcut from "@/components/ActivityBarShortcut/ActivityBarShortcut"
   import { reactive, computed, toRefs } from "vue"
+  import store from "@/store"
 
   export default {
     components: {
       BrandImage,
       ActivityBarShortcut,
     },
-    props: {
-      currentUser: Object,
-    },
     setup(props) {
-      // Getting shortcuts information from props.
       const event = reactive({
-        layoutPreferences: computed(() => {
-          return props.currentUser && props.currentUser.layoutPreferences
-        }),
         activityBarMainShortcuts: computed(() => {
-          return event.layoutPreferences && event.layoutPreferences.activityBarMainShortcuts
+          return store.getters.sessionUser?.layoutPreferences?.activityBarMainShortcuts
         }),
         activityBarOtherShortcuts: computed(() => {
-          return event.layoutPreferences && event.layoutPreferences.activityBarOtherShortcuts
+          return store.getters.sessionUser?.layoutPreferences?.activityBarOtherShortcuts
         }),
       })
 

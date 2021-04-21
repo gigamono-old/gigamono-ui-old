@@ -15,8 +15,9 @@
 
 <script>
   import WorkflowStepCard from "@/components/WorkflowStepCard/WorkflowStepCard"
-  import { ref } from "vue"
-  import { onDrop, steps } from "./events"
+  import { ref, computed } from "vue"
+  import { onDrop } from "./events"
+  import store from "@/store"
 
   export default {
     components: {
@@ -24,6 +25,8 @@
     },
     setup() {
       const containerElement = ref(null)
+
+      const steps = computed(() => store.getters.workspaceProjectWorkflow.steps)
 
       const stylePosition = ({ x, y }) => ({
         left: x + "px",

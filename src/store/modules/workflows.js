@@ -1,5 +1,5 @@
 const state = {
-  currentWorkflow: {
+  workspaceProjectWorkflow: {
     steps: new Map(), // index => step { cursorDropPoint, actualDropPoint }
     highestIndex: -1,
     containerBounds: null, // { x, y, width, height }
@@ -7,17 +7,17 @@ const state = {
 }
 
 const getters = {
-  currentWorkflow: (state) => state.currentWorkflow,
+  workspaceProjectWorkflow: (state) => state.workspaceProjectWorkflow,
 }
 
 const actions = {
-  addStepToCurrentWorkflow: ({ commit, state }, step) => {
+  addStepToWorkspaceProjectWorkflow: ({ commit, state }, step) => {
     // The new highest index is just an increment of the old highest index.
-    const newHighestIndex = state.currentWorkflow.highestIndex + 1
+    const newHighestIndex = state.workspaceProjectWorkflow.highestIndex + 1
 
     // Commit changes. With the new step associated with new highest index.
     commit("incrementHighestIndex", newHighestIndex)
-    commit("addStepToCurrentWorkflow", { step, newHighestIndex })
+    commit("addStepToWorkspaceProjectWorkflow", { step, newHighestIndex })
   },
   updateContainerBounds: ({ commit }, newContainerBounds) => {
     commit("updateContainerBounds", newContainerBounds)
@@ -25,14 +25,14 @@ const actions = {
 }
 
 const mutations = {
-  addStepToCurrentWorkflow: (state, { step, newHighestIndex }) => {
-    state.currentWorkflow.steps.set(newHighestIndex, step)
+  addStepToWorkspaceProjectWorkflow: (state, { step, newHighestIndex }) => {
+    state.workspaceProjectWorkflow.steps.set(newHighestIndex, step)
   },
   incrementHighestIndex: (state, newHighestIndex) => {
-    state.currentWorkflow.highestIndex = newHighestIndex
+    state.workspaceProjectWorkflow.highestIndex = newHighestIndex
   },
   updateContainerBounds: (state, newContainerBounds) => {
-    state.currentWorkflow.containerBounds = newContainerBounds
+    state.workspaceProjectWorkflow.containerBounds = newContainerBounds
   },
 }
 

@@ -2,7 +2,7 @@
 main#content
   sidebar.sidebar
   main-area.main-area
-  tab.tab(:currentUser="currentUser")
+  tab.tab
 </template>
 
 <script>
@@ -12,9 +12,6 @@ main#content
 
   export default {
     components: { Tab, Sidebar, MainArea },
-    props: {
-      currentUser: Object,
-    },
     setup() {},
   }
 </script>

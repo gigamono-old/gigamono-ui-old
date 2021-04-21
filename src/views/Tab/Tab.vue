@@ -3,12 +3,12 @@
   .top-pane
     button.collapse-wrapper(@click="toggleSidebar", :class="cls")
       .icon-expand-arrow-2
-    router-view(name="tabTopPane", :currentUser="currentUser")
+    router-view(name="tabTopPane", :sessionUser="sessionUser")
 
   .layout-divider
 
   .bottom-pane
-    router-view(name="tabBottomPane", :currentUser="currentUser")
+    router-view(name="tabBottomPane", :sessionUser="sessionUser")
 
   .layout-divider
 </template>
@@ -19,7 +19,7 @@
 
   export default {
     props: {
-      currentUser: Object,
+      sessionUser: Object,
     },
     setup() {
       const emitter = getEmitter()

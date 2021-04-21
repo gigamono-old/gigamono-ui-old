@@ -2,10 +2,10 @@ import axios from "axios"
 import { clean } from "@/utils/string"
 
 // Gets the current user basic data.
-export const getCurrentUser = async () => {
+export const getSessionUser = async () => {
   const query = `
-  query getCurrentUser {
-    getCurrentUser{
+  query getSessionUser {
+    getSessionUser{
       id
       profile {
         username
@@ -27,41 +27,39 @@ export const getCurrentUser = async () => {
         }
       }
       workspaces {
+        id
         name
         avatar32URL
       }
-      selectedWorkspaceIndex
-      projects {
+      workspaceIndex
+      workspaceProjects {
+        id
         name
-        workflows {
+      }
+      workspaceProjectIndex
+      workspaceProjectWorkflows {
+        id
+        name
+      }
+      workspaceProjectWorkflowIndex
+      workspaceProjectDocuments {
+        id
+        name
+      }
+      workspaceProjectDocumentIndex
+      workspaceIntegrations {
+        integrations {
           name
+          id
+          description
+          avatar32URL
         }
-        selectedWorkflowIndex
-      }
-      selectedProjectIndex
-    }
-  }
-  `
-
-  return axios.get("graphql?query=" + clean(query))
-}
-
-// Gets the current user integrations.
-export const getCurrentUserIntegrations = async () => {
-  const query = `
-  query getCurrentUserIntegrations {
-    getCurrentUserIntegrations {
-      integrations {
-        name
-        id
-        description
-        avatar32URL
-      }
-      builtins {
-        name
-        id
-        description
-        avatar32URL
+        builtins {
+          name
+          id
+          description
+          avatar32URL
+        }
       }
     }
   }

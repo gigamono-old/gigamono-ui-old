@@ -1,40 +1,27 @@
-import { getCurrentUser, getCurrentUserIntegrations } from "@/requests/user"
+import { getSessionUser, getSessionUserIntegrations } from "@/requests/user"
 
 const state = {
-  currentUser: {},
-  currentUserIntegrations: {},
+  sessionUser: {},
 }
 
 const getters = {
-  currentUser: (state) => state.currentUser,
-  currentUserIntegrations: (state) => state.currentUserIntegrations,
+  sessionUser: (state) => state.sessionUser,
 }
 
 const actions = {
-  getCurrentUser: async ({ commit }) => {
+  getSessionUser: async ({ commit }) => {
     try {
-      const response = await getCurrentUser()
-      commit("setCurrentUser", response.data.data.getCurrentUser)
+      const response = await getSessionUser()
+      commit("setSessionUser", response.data.data.getSessionUser)
     } catch (error) {
       console.error("Error trying to get user data!", error)
-    }
-  },
-  getCurrentUserIntegrations: async ({ commit }) => {
-    try {
-      const response = await getCurrentUserIntegrations()
-      commit("setCurrentUserIntegrations", response.data.data.getCurrentUserIntegrations)
-    } catch (error) {
-      console.error("Error trying to get user integrations!", error)
     }
   },
 }
 
 const mutations = {
-  setCurrentUser: (state, payload) => {
-    state.currentUser = payload
-  },
-  setCurrentUserIntegrations: (state, payload) => {
-    state.currentUserIntegrations = payload
+  setSessionUser: (state, newUser) => {
+    state.sessionUser = newUser
   },
 }
 

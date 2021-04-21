@@ -1,21 +1,19 @@
 import store from "@/store"
-import { computed } from "vue"
 import { convertRemtoPxInt } from "@/utils/css"
-
-const steps = computed(() => store.getters.currentWorkflow.steps)
 
 // Handles onDrop event on the container element.
 const onDrop = (event, containerElement) => {
+  const steps = store.getters.workspaceProjectWorkflow.steps
   const transferedData = JSON.parse(event.dataTransfer.getData("text/plain"))
 
   // Calculate the drop point from cursor and container positional information.
   const dropPoints = calculateDropPoints(containerElement, event)
 
   // Add workflow step to container.
-  store.dispatch("addStepToCurrentWorkflow", dropPoints)
+  store.dispatch("addStepToWorkspaceProjectWorkflow", dropPoints)
 
   // Update container bounds.
-  updateContainerBounds(dropPoints.cursorDropPoint, steps.value, containerElement)
+  updateContainerBounds(dropPoints.cursorDropPoint, steps, containerElement)
 }
 
 // Calculates the points where an element will be dropped.
@@ -50,8 +48,8 @@ const calculateDropPoints = (containerElement, dropEvent) => {
 
 // Updates the container bounds.
 const updateContainerBounds = (latestCursorDropPoint, steps, containerElement) => {
+  const containerBounds = store.getters.workspaceProjectWorkflow.containerBounds
   const paddings = { x: 1200, y: 800 } // The padding space between the bounds and cursor drop points.
-  const containerBounds = store.getters.currentWorkflow.containerBounds
 
   let newContainerBounds = null
 
@@ -138,4 +136,4 @@ const calculateContainerBoundsFromSteps = (steps, containerElement, paddings) =>
   )
 }
 
-export { onDrop, steps }
+export { onDrop }

@@ -12,6 +12,6 @@
   #main-area-documents {
     height: 100%;
     width: 100%;
-    background-color: limegreen;
+    background-color: var(--color-bg-6);
   }
 </style>

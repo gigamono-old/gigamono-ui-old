@@ -2,7 +2,7 @@
 <template lang="pug">
 #top-pane-workflows
 
-  //- ABSTRACT
+  // TODO: ABSTRACT
   .left-content
     .icon-everything-wrapper
       .icon-everything
@@ -10,7 +10,7 @@
     .v-divider
 
     ul.page-list
-      li(v-for="(workflow, idx) in workflows", :class="{ 'selected': idx === selectedWorkflowIndex }")
+      li(v-for="(workflow, idx) in workspaceProjectWorkflows", :class="{ 'selected': idx === workspaceProjectWorkflowIndex }")
         .name {{ workflow.name }}
         .highlight-bar
         .v-divider
@@ -21,7 +21,7 @@
   //- MID
   .mid-content
 
-  //- ABSTRACT
+  // TODO: ABSTRACT
   .right-content
     .icon-notification-wrapper
       .icon-notification
@@ -32,32 +32,31 @@
     .user-profile
       .img-wrapper
         .halo
-        img.avatar-user(:src="profile && profile.avatar32URL")
+        img.avatar-user(:src="profile?.avatar32URL")
 
       .icon-expand-arrow
 </template>
 
 <script>
   import { reactive, computed, toRefs } from "vue"
+  import store from "@/store"
 
   export default {
-    props: {
-      currentUser: Object,
-    },
-    setup(props) {
+    setup() {
       const event = reactive({
         profile: computed(() => {
-          return props.currentUser && props.currentUser.profile
+          return store.getters.sessionUser?.profile
         }),
-        selectedProject: computed(() => {
-          const projects = props.currentUser && props.currentUser.projects
-          return projects && projects[props.currentUser.selectedProjectIndex]
+        workspaceProject: computed(() => {
+          return store.getters.sessionUser?.workspaceProjects?.[
+            store.getters.sessionUser?.workspaceProjectIndex
+          ]
         }),
-        workflows: computed(() => {
-          return event.selectedProject && event.selectedProject.workflows
+        workspaceProjectWorkflows: computed(() => {
+          return store.getters.sessionUser?.workspaceProjectWorkflows
         }),
-        selectedWorkflowIndex: computed(() => {
-          return event.selectedProject && event.selectedProject.selectedWorkflowIndex
+        workspaceProjectWorkflowIndex: computed(() => {
+          return store.getters.sessionUser?.workspaceProjectWorkflowIndex
         }),
       })
 

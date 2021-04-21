@@ -52,17 +52,15 @@
       ConnectorCard,
     },
     setup() {
-      store.dispatch("getCurrentUserIntegrations") // Fetch current user integrations.
-
       const event = reactive({
-        currentUserIntegrations: computed(() => {
-          return store.getters.currentUserIntegrations
+        workspaceIntegrations: computed(() => {
+          return store.getters.sessionUser?.workspaceIntegrations
         }),
         integrations: computed(() => {
-          return event.currentUserIntegrations && event.currentUserIntegrations.integrations
+          return event.workspaceIntegrations?.integrations
         }),
         builtins: computed(() => {
-          return event.currentUserIntegrations && event.currentUserIntegrations.builtins
+          return event.workspaceIntegrations?.builtins
         }),
       })
 

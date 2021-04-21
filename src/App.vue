@@ -1,12 +1,11 @@
 <template lang="pug">
 .app
-  activity-bar.activity-bar(:currentUser="currentUser")
-  content.content(:currentUser="currentUser")
+  activity-bar.activity-bar
+  content.content
 </template>
 
 <script>
   import store from "@/store"
-  import { computed } from "vue"
   import ActivityBar from "@/components/ActivityBar/ActivityBar"
   import Content from "@/views/Content/Content"
 
@@ -16,13 +15,7 @@
       Content,
     },
     setup() {
-      store.dispatch("getCurrentUser") // Fetch current user data.
-
-      const currentUser = computed(() => {
-        return store.getters.currentUser
-      })
-
-      return { currentUser }
+      store.dispatch("getSessionUser") // Fetch current user data.
     },
   }
 </script>
