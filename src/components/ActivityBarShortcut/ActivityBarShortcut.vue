@@ -1,5 +1,5 @@
 <template lang="pug">
-router-link.bend(:to="route")
+router-link(:to="route")
   .wrapper(ref="wrapperElement")
     .icon(ref="iconElement")
 </template>
@@ -28,7 +28,7 @@ router-link.bend(:to="route")
             // Change to filled icon and change icon color.
             iconElement.value.classList.remove(outlinedIconName)
             iconElement.value.classList.add(filledIconName)
-            iconElement.value.style.backgroundColor = "white"
+            iconElement.value.style.backgroundColor = "var(--color-bg-8)"
             // Add .highlighted class.
             wrapperElement.value.classList.add("highlighted")
           } else {
@@ -81,7 +81,7 @@ router-link.bend(:to="route")
       }
     }
 
-    // Hover only works on .wrapper child with .highlighed class.
+    // Hover only works on .wrapper children without .highlighed class.
     &:hover > :not([class*="highlighted"]) {
       box-shadow: var(--shadow-primary);
       border: var(--border-part) var(--color-bg);

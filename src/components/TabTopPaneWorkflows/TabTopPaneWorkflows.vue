@@ -10,7 +10,7 @@
     .v-divider
 
     ul.page-list
-      li(v-for="(workflow, idx) in workspaceProjectWorkflows", :class="{ 'selected': idx === workspaceProjectWorkflowIndex }")
+      li(v-for="(workflow, idx) in focusWorkflows", :class="{ 'selected': idx === focusWorkflowIndex }")
         .name {{ workflow.name }}
         .highlight-bar
         .v-divider
@@ -47,16 +47,19 @@
         profile: computed(() => {
           return store.getters.sessionUser?.profile
         }),
-        workspaceProject: computed(() => {
-          return store.getters.sessionUser?.workspaceProjects?.[
-            store.getters.sessionUser?.workspaceProjectIndex
-          ]
+        focusWorkspace: computed(() => {
+          const index = store.getters.sessionUser?.session?.focusWorkspaceIndex
+          return store.getters.sessionUser?.session?.workspaces?.[index]
         }),
-        workspaceProjectWorkflows: computed(() => {
-          return store.getters.sessionUser?.workspaceProjectWorkflows
+        focusProject: computed(() => {
+          const index = event.focusWorkspace?.focusProjectIndex
+          return event.focusWorkspace?.projects?.[index]
         }),
-        workspaceProjectWorkflowIndex: computed(() => {
-          return store.getters.sessionUser?.workspaceProjectWorkflowIndex
+        focusWorkflows: computed(() => {
+          return event.focusProject?.workflows
+        }),
+        focusWorkflowIndex: computed(() => {
+          return event.focusProject?.focusWorkflowIndex
         }),
       })
 

@@ -40,10 +40,10 @@ aside#activity-bar
     setup(props) {
       const event = reactive({
         activityBarMainShortcuts: computed(() => {
-          return store.getters.sessionUser?.layoutPreferences?.activityBarMainShortcuts
+          return store.getters.sessionUser?.session?.layoutPreferences?.activityBarMainShortcuts
         }),
         activityBarOtherShortcuts: computed(() => {
-          return store.getters.sessionUser?.layoutPreferences?.activityBarOtherShortcuts
+          return store.getters.sessionUser?.session?.layoutPreferences?.activityBarOtherShortcuts
         }),
       })
 

@@ -53,14 +53,14 @@
     },
     setup() {
       const event = reactive({
-        workspaceIntegrations: computed(() => {
-          return store.getters.sessionUser?.workspaceIntegrations
+        sessionIntegrations: computed(() => {
+          return store.getters.sessionUser?.session?.integrations
         }),
         integrations: computed(() => {
-          return event.workspaceIntegrations?.integrations
+          return event.sessionIntegrations?.integrations
         }),
         builtins: computed(() => {
-          return event.workspaceIntegrations?.builtins
+          return event.sessionIntegrations?.builtins
         }),
       })
 

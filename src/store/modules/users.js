@@ -1,4 +1,4 @@
-import { getSessionUser, getSessionUserIntegrations } from "@/requests/user"
+import { getSessionUser } from "@/requests/user"
 
 const state = {
   sessionUser: {},

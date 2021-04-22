@@ -12,53 +12,48 @@ export const getSessionUser = async () => {
         email
         avatar32URL
       }
-      layoutPreferences {
-        activityBarMainShortcuts {
-          iconName
-          route
-        }
-        activityBarSpaceShortcuts {
-          iconName
-          route
-        }
-        activityBarOtherShortcuts {
-          iconName
-          route
-        }
-      }
-      workspaces {
-        id
-        name
-        avatar32URL
-      }
-      workspaceIndex
-      workspaceProjects {
-        id
-        name
-      }
-      workspaceProjectIndex
-      workspaceProjectWorkflows {
-        id
-        name
-      }
-      workspaceProjectWorkflowIndex
-      workspaceProjectDocuments {
-        id
-        name
-      }
-      workspaceProjectDocumentIndex
-      workspaceIntegrations {
+      session {
         integrations {
-          name
-          id
-          description
-          avatar32URL
+          integrations {
+            id
+            name
+            description
+            avatar32URL
+          }
+          builtins {
+            id
+            name
+            description
+            avatar32URL
+          }
         }
-        builtins {
-          name
+        layoutPreferences {
+          activityBarMainShortcuts {
+            iconName
+            route
+          }
+          activityBarOtherShortcuts {
+            iconName
+            route
+          }
+        }
+        focusWorkspaceIndex
+        workspaces {
           id
-          description
-          avatar32URL
+          name
+          focusProjectIndex
+          projects {
+            focusWorkflowIndex
+            focusDocumentIndex
+            documents {
+              id
+              name
+            }
+            workflows {
+              id
+              name
+            }
+          }
         }
       }
     }

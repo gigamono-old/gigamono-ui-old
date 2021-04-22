@@ -1,5 +1,6 @@
 import store from "@/store"
 import { convertRemtoPxInt } from "@/utils/css"
+import { getCSSVar } from "../../utils/css"
 
 // Handles onDrop event on the container element.
 const onDrop = (event, containerElement) => {
@@ -28,11 +29,8 @@ const calculateDropPoints = (containerElement, dropEvent) => {
   }
 
   // Also, the dropped element is rendered starting from the tip of the cursor.
-  // We are going to use the dropped element width to make sure the center is at the cursor.
-  const droppedElementWidthRem = getComputedStyle(document.documentElement).getPropertyValue(
-    "--spacing-step-card-width"
-  )
-  const droppedElementWidth = convertRemtoPxInt(droppedElementWidthRem)
+  // We are going to use the dropped element width to make sure the center is at the cursor.;//
+  const droppedElementWidth = convertRemtoPxInt(getCSSVar("--spacing-step-card-width"))
   const height = 16 * 3 // 16 * 3rem (no reason) = 48px
 
   const actualDropPoint = {
