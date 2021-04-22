@@ -53,15 +53,8 @@
     },
     setup() {
       const event = reactive({
-        sessionIntegrations: computed(() => {
-          return store.getters.sessionUser?.session?.integrations
-        }),
-        integrations: computed(() => {
-          return event.sessionIntegrations?.integrations
-        }),
-        builtins: computed(() => {
-          return event.sessionIntegrations?.builtins
-        }),
+        integrations: computed(() => store.getters.sessionIntegrations?.integrations),
+        builtins: computed(() => store.getters.sessionIntegrations?.builtins),
       })
 
       return { ...toRefs(event) }

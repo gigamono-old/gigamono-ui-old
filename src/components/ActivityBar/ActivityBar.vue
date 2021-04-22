@@ -37,14 +37,10 @@ aside#activity-bar
       BrandImage,
       ActivityBarShortcut,
     },
-    setup(props) {
+    setup() {
       const event = reactive({
-        activityBarMainShortcuts: computed(() => {
-          return store.getters.sessionUser?.session?.layoutPreferences?.activityBarMainShortcuts
-        }),
-        activityBarOtherShortcuts: computed(() => {
-          return store.getters.sessionUser?.session?.layoutPreferences?.activityBarOtherShortcuts
-        }),
+        activityBarMainShortcuts: computed(() => store.getters.activityBarMainShortcuts),
+        activityBarOtherShortcuts: computed(() => store.getters.activityBarOtherShortcuts),
       })
 
       return { ...toRefs(event) }

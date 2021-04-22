@@ -6,6 +6,19 @@ const state = {
 
 const getters = {
   sessionUser: (state) => state.sessionUser,
+  activityBarMainShortcuts: (state) =>
+    state.sessionUser?.session?.layoutPreferences?.activityBarMainShortcuts,
+  activityBarOtherShortcuts: (state) =>
+    state.sessionUser?.session?.layoutPreferences?.activityBarOtherShortcuts,
+  sessionIntegrations: (state) => state.sessionUser?.session?.integrations,
+  focusWorkspace: (state) => {
+    const index = state.sessionUser?.session?.focusWorkspaceIndex
+    return state.sessionUser?.session?.workspaces?.[index]
+  },
+  focusProject: (_, getters) => {
+    const index = getters.focusWorkspace?.focusProjectIndex
+    return getters.focusWorkspace?.projects?.[index]
+  },
 }
 
 const actions = {

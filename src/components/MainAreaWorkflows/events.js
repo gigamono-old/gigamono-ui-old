@@ -111,7 +111,7 @@ const calculateContainerBoundsFromSteps = (steps, containerElement, paddings) =>
   let topmost = steps.get(0).cursorDropPoint.y
   let bottommost = steps.get(0).cursorDropPoint.y
 
-  // Get the extremes
+  // Get the extreme sides.
   for (let [_, step] of steps) {
     const { x, y } = step.cursorDropPoint
     if (x < leftmost) {
@@ -133,5 +133,8 @@ const calculateContainerBoundsFromSteps = (steps, containerElement, paddings) =>
     paddings
   )
 }
+
+// TODO: Use translate3D for scrolling
+const onScroll = () => {}
 
 export { onDrop }

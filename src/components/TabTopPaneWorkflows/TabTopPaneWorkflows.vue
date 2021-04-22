@@ -44,23 +44,9 @@
   export default {
     setup() {
       const event = reactive({
-        profile: computed(() => {
-          return store.getters.sessionUser?.profile
-        }),
-        focusWorkspace: computed(() => {
-          const index = store.getters.sessionUser?.session?.focusWorkspaceIndex
-          return store.getters.sessionUser?.session?.workspaces?.[index]
-        }),
-        focusProject: computed(() => {
-          const index = event.focusWorkspace?.focusProjectIndex
-          return event.focusWorkspace?.projects?.[index]
-        }),
-        focusWorkflows: computed(() => {
-          return event.focusProject?.workflows
-        }),
-        focusWorkflowIndex: computed(() => {
-          return event.focusProject?.focusWorkflowIndex
-        }),
+        profile: computed(() => store.getters.sessionUser?.profile),
+        focusWorkflows: computed(() => store.getters.focusProject?.workflows),
+        focusWorkflowIndex: computed(() => store.getters.focusProject?.focusWorkflowIndex),
       })
 
       return { ...toRefs(event) }
