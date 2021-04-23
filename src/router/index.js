@@ -1,24 +1,24 @@
 import { createRouter, createWebHistory } from "vue-router"
 
-import SidebarWorkflows from "@/components/SidebarWorkflows/SidebarWorkflows"
-import SidebarDashboard from "@/components/SidebarDashboard/SidebarDashboard"
-import SidebarDesign from "@/components/SidebarDesign/SidebarDesign"
-import SidebarDocuments from "@/components/SidebarDocuments/SidebarDocuments"
-import SidebarExtensions from "@/components/SidebarExtensions/SidebarExtensions"
-import SidebarSettings from "@/components/SidebarSettings/SidebarSettings"
-import SidebarDeveloper from "@/components/SidebarDeveloper/SidebarDeveloper"
+import SidebarWorkflows from "@/components/layout/SidebarWorkflows"
+import SidebarDashboard from "@/components/layout/SidebarDashboard"
+import SidebarDesign from "@/components/layout/SidebarDesign"
+import SidebarDocuments from "@/components/layout/SidebarDocuments"
+import SidebarExtensions from "@/components/layout/SidebarExtensions"
+import SidebarSettings from "@/components/layout/SidebarSettings"
+import SidebarDeveloper from "@/components/layout/SidebarDeveloper"
 
-import MainAreaWorkflows from "@/components/MainAreaWorkflows/MainAreaWorkflows"
-import MainAreaDashboard from "@/components/MainAreaDashboard/MainAreaDashboard"
-import MainAreaDesign from "@/components/MainAreaDesign/MainAreaDesign"
-import MainAreaDocuments from "@/components/MainAreaDocuments/MainAreaDocuments"
-import MainAreaExtensions from "@/components/MainAreaExtensions/MainAreaExtensions"
-import MainAreaSettings from "@/components/MainAreaSettings/MainAreaSettings"
-import MainAreaDeveloper from "@/components/MainAreaDeveloper/MainAreaDeveloper"
+import MainAreaWorkflows from "@/components/layout/MainAreaWorkflows/MainAreaWorkflows"
+import MainAreaDashboard from "@/components/layout/MainAreaDashboard"
+import MainAreaDesign from "@/components/layout/MainAreaDesign"
+import MainAreaDocuments from "@/components/layout/MainAreaDocuments"
+import MainAreaExtensions from "@/components/layout/MainAreaExtensions"
+import MainAreaSettings from "@/components/layout/MainAreaSettings"
+import MainAreaDeveloper from "@/components/layout/MainAreaDeveloper"
 
-import TabTopPaneWorkflows from "@/components/TabTopPaneWorkflows/TabTopPaneWorkflows"
+import TabTopPaneWorkflows from "@/components/layout/TabTopPaneWorkflows"
 
-import TabBottomPaneWorkflows from "@/components/TabBottomPaneWorkflows/TabBottomPaneWorkflows"
+import TabBottomPaneWorkflows from "@/components/layout/TabBottomPaneWorkflows"
 
 const routes = [
   {

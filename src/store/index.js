@@ -1,11 +1,11 @@
 import { createStore } from "vuex"
-import users from "@/store/modules/users"
-import workflows from "@/store/modules/workflows"
+import user from "@/store/modules/user"
+import workflow from "@/store/modules/workflow"
 
 // Create store.
 export default createStore({
   modules: {
-    users,
-    workflows,
+    user,
+    workflow,
   },
 })

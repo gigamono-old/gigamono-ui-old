@@ -6,7 +6,7 @@
 
 <script>
   import store from "@/store"
-  import ActivityBar from "@/components/ActivityBar/ActivityBar"
+  import ActivityBar from "@/components/layout/ActivityBar"
   import Content from "@/views/Content/Content"
 
   export default {
@@ -15,7 +15,7 @@
       Content,
     },
     setup() {
-      store.dispatch("getSessionUser") // Fetch current user data.
+      store.dispatch("user/getSessionUser") // Fetch current user data.
     },
   }
 </script>
