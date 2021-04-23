@@ -1,17 +1,17 @@
 const state = {
-  workspaceProjectDocument: {},
+  focusDocument: {},
 }
 
 const getters = {
-  workspaceProjectDocument: (state) => state.workspaceProjectDocument,
+  focusDocument: (state) => state.focusDocument,
 }
 
 const actions = {
-  addStepToWorkspaceProjectDocument: ({ commit, state }) => {},
+  xx: ({ commit, state }) => {},
 }
 
 const mutations = {
-  addStepToWorkspaceProjectDocument: (state, step) => {},
+  xx: (state, step) => {},
 }
 
 export default {

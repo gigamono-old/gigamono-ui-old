@@ -9,10 +9,10 @@
 
     collection.collection
       // TODO: Abstract
-      button.view-button(v-for="view in views")
-        .icon(:class="iconClass")
-        .name {{ view.name }}
-        .icon-v-context-menu
+      //- button.view-button(v-for="view in views")
+      //-   .icon(:class="iconClass")
+      //-   .name {{ view.name }}
+      //-   .icon-v-context-menu
 
     .action-wrapper
       .icon-plus
@@ -33,15 +33,15 @@
       Collection,
     },
     setup() {
-      store.dispatch("getCurrentDocument")
+      store.dispatch("document/getCurrentDocument")
 
       const event = reactive({
-        currentDocument: computed(() => {
-          return store.getters.currentDocument
-        }),
-        views: computed(() => {
-          return event.currentDocument && event.currentDocument.views
-        }),
+        // currentDocument: computed(() => {
+        //   return store.getters.currentDocument
+        // }),
+        // views: computed(() => {
+        //   return event.currentDocument && event.currentDocument.views
+        // }),
       })
 
       return { ...toRefs(event) }

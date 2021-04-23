@@ -6,19 +6,25 @@ const state = {
 
 const getters = {
   sessionUser: (state) => state.sessionUser,
-  activityBarMainShortcuts: (state) =>
-    state.sessionUser?.session?.layoutPreferences?.activityBarMainShortcuts,
+
+  profile: (state) => state.sessionUser?.profile,
+
+  integrations: (state) => state.sessionUser?.integrations,
+
+  activityBarMainShortcuts: (state) => state.sessionUser?.session?.layout?.activityBarMainShortcuts,
+
   activityBarOtherShortcuts: (state) =>
-    state.sessionUser?.session?.layoutPreferences?.activityBarOtherShortcuts,
-  sessionIntegrations: (state) => state.sessionUser?.session?.integrations,
-  focusWorkspace: (state) => {
-    const index = state.sessionUser?.session?.focusWorkspaceIndex
-    return state.sessionUser?.session?.workspaces?.[index]
-  },
-  focusProject: (_, getters) => {
-    const index = getters.focusWorkspace?.focusProjectIndex
-    return getters.focusWorkspace?.projects?.[index]
-  },
+    state.sessionUser?.session?.layout?.activityBarOtherShortcuts,
+
+  focusWorkspaceIndex: (state) => state.sessionUser?.session?.focusWorkspaceIndex,
+
+  focusWorkspace: (state, getters) => state.sessionUser?.workspaces?.[getters.focusWorkspaceIndex],
+
+  focusProjectIndex: (state, getters) =>
+    state.sessionUser?.session?.workspaceFocusIndices?.[getters.focusWorkspaceIndex]
+      ?.focusProjectIndex,
+
+  focusProject: (_, getters) => getters.focusWorkspace?.projects?.[getters.focusProjectIndex],
 }
 
 const actions = {

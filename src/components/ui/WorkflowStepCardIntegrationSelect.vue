@@ -18,7 +18,7 @@ li.workflow-step-card-integration-select
     .title Select Integration
     search-bar.search-bar
     collection.collection
-      grid-list.grid-list(title="Integrations", :list="integrations")
+      grid-list.grid-list(title="Integrations", :list="apps")
       grid-list.grid-list(title="Builtins", :list="builtins", :isSVG="true")
 </template>
 
@@ -43,8 +43,8 @@ li.workflow-step-card-integration-select
       }
 
       const event = reactive({
-        integrations: computed(() => store.getters["user/sessionIntegrations"]?.integrations),
-        builtins: computed(() => store.getters["user/sessionIntegrations"]?.builtins),
+        apps: computed(() => store.getters["user/integrations"]?.apps),
+        builtins: computed(() => store.getters["user/integrations"]?.builtins),
       })
 
       return { ...toRefs(event), expanded, expand }

@@ -10,14 +10,14 @@
     search-bar.search-bar
 
     collection.collection
-      collapsible.collapsible(title="Integrations")
+      collapsible.collapsible(title="Apps")
         ul.list
-          li(v-for="integration in integrations")
+          li(v-for="app in apps")
             connector-card(
-              :name="integration.name",
-              :id="integration.id",
-              :description="integration.description",
-              :avatar32URL="integration.avatar32URL",
+              :name="app.name",
+              :id="app.id",
+              :description="app.description",
+              :avatar32URL="app.avatar32URL",
             )
 
       collapsible.collapsible(title="Builtins")
@@ -53,8 +53,8 @@
     },
     setup() {
       const event = reactive({
-        integrations: computed(() => store.getters["user/sessionIntegrations"]?.integrations),
-        builtins: computed(() => store.getters["user/sessionIntegrations"]?.builtins),
+        apps: computed(() => store.getters["user/integrations"]?.apps),
+        builtins: computed(() => store.getters["user/integrations"]?.builtins),
       })
 
       return { ...toRefs(event) }

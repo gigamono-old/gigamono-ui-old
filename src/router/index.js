@@ -17,8 +17,10 @@ import MainAreaSettings from "@/components/layout/MainAreaSettings"
 import MainAreaDeveloper from "@/components/layout/MainAreaDeveloper"
 
 import TabTopPaneWorkflows from "@/components/layout/TabTopPaneWorkflows"
+import TabTopPaneDocuments from "@/components/layout/TabTopPaneDocuments"
 
 import TabBottomPaneWorkflows from "@/components/layout/TabBottomPaneWorkflows"
+import TabBottomPaneDocuments from "@/components/layout/TabBottomPaneDocuments"
 
 const routes = [
   {
@@ -61,6 +63,8 @@ const routes = [
     components: {
       sidebar: SidebarDocuments,
       mainArea: MainAreaDocuments,
+      tabTopPane: TabTopPaneDocuments,
+      tabBottomPane: TabBottomPaneDocuments,
     },
   },
   {

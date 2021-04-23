@@ -13,21 +13,7 @@ export const getSessionUser = async () => {
         avatar32URL
       }
       session {
-        integrations {
-          integrations {
-            id
-            name
-            description
-            avatar32URL
-          }
-          builtins {
-            id
-            name
-            description
-            avatar32URL
-          }
-        }
-        layoutPreferences {
+        layout {
           activityBarMainShortcuts {
             iconName
             route
@@ -38,22 +24,40 @@ export const getSessionUser = async () => {
           }
         }
         focusWorkspaceIndex
-        workspaces {
-          id
-          name
+        workspaceFocusIndices {
           focusProjectIndex
-          projects {
+          projectFocusIndices {
             focusWorkflowIndex
             focusDocumentIndex
-            documents {
-              id
-              name
-            }
-            workflows {
-              id
-              name
-            }
           }
+        }
+      }
+      workspaces {
+        projects {
+          id
+          name
+          documents {
+            id
+            name
+          }
+          workflows {
+            id
+            name
+          }
+        }
+      }
+      integrations {
+        apps {
+          id
+          name
+          description
+          avatar32URL
+        }
+        builtins {
+          id
+          name
+          description
+          avatar32URL
         }
       }
     }

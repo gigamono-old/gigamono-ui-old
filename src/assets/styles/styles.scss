@@ -214,3 +214,9 @@ a {
   width: var(--spacing-gutter-primary);
   background-color: var(--color-bg);
 }
+
+.v-tab-divider {
+  width: 0.0625rem;
+  height: 1.5rem;
+  background-color: var(--color-bg);
+}
