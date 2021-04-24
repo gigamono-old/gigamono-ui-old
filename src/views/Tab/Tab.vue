@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import { getEmitter } from "@/event"
+  import { getEmitter } from "@/application/events"
   import { ref } from "vue"
 
   export default {

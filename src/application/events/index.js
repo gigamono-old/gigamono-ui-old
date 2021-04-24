@@ -1,5 +1,7 @@
 import { getCurrentInstance } from "vue"
 
-export const getEmitter = () => {
+const getEmitter = () => {
   return getCurrentInstance().appContext.config.globalProperties.emitter
 }
+
+export { getEmitter }
