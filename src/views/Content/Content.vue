@@ -24,8 +24,8 @@ main#content
     grid-template-areas:
       "sidebar tab"
       "sidebar main-area";
-    grid-template-columns: auto minmax(0, 1fr);
-    grid-template-rows: auto minmax(0, 1fr);
+    grid-template-columns: auto minmax(0, 1fr); // Can't use just 1fr; its min is auto.
+    grid-template-rows: auto minmax(0, 1fr); // Can't use just 1fr; its min is auto.
 
     > .tab {
       grid-area: tab;

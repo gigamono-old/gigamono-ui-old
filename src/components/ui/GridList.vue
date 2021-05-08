@@ -45,7 +45,7 @@
 
     > ul.list {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr)); // Can't use just 1fr; its min is auto.
       column-gap: 0.125rem;
       row-gap: 2rem;
       margin-top: calc(var(--spacing-step-card-element-margin) * 2);

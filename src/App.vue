@@ -31,7 +31,7 @@
     display: grid;
     grid-template-areas: "activity-bar content";
     grid-template-columns: auto 1fr;
-    grid-template-rows: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr); // Can't use just 1fr; its min is auto.
 
     > .activity-bar {
       grid-area: activity-bar;
