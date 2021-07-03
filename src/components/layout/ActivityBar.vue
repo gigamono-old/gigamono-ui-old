@@ -9,7 +9,7 @@ aside#activity-bar
 
   //- Main shortcuts.
   ul.main-shortcuts
-    li(v-for="shortcut in activityBarMainShortcuts")
+    li(v-for="shortcut in mainShortcuts")
       activity-bar-shortcut.activity-bar-shortcut(:iconName="shortcut.iconName", :route="shortcut.route")
 
   .layout-divider
@@ -22,7 +22,7 @@ aside#activity-bar
 
   //- Other system shorrtcuts.
   ul.other-shortcuts
-    li(v-for="shortcut in activityBarOtherShortcuts")
+    li(v-for="shortcut in otherShortcuts")
       activity-bar-shortcut.activity-bar-shortcut(:iconName="shortcut.iconName", :route="shortcut.route")
 </template>
 
@@ -39,8 +39,8 @@ aside#activity-bar
     },
     setup() {
       const event = reactive({
-        activityBarMainShortcuts: computed(() => store.getters["user/activityBarMainShortcuts"]),
-        activityBarOtherShortcuts: computed(() => store.getters["user/activityBarOtherShortcuts"]),
+        mainShortcuts: computed(() => store.getters["user/mainShortcuts"]),
+        otherShortcuts: computed(() => store.getters["user/otherShortcuts"]),
       })
 
       return { ...toRefs(event) }

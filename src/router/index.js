@@ -1,70 +1,60 @@
 import { createRouter, createWebHistory } from "vue-router"
 
-import SidebarWorkflows from "@/components/layout/SidebarWorkflows"
-import SidebarDashboard from "@/components/layout/SidebarDashboard"
-import SidebarDesign from "@/components/layout/SidebarDesign"
-import SidebarDocuments from "@/components/layout/SidebarDocuments"
+import SidebarAutomations from "@/components/layout/SidebarAutomations"
+import SidebarDecks from "@/components/layout/SidebarDecks"
+import SidebarBases from "@/components/layout/SidebarBases"
 import SidebarExtensions from "@/components/layout/SidebarExtensions"
 import SidebarSettings from "@/components/layout/SidebarSettings"
-import SidebarDeveloper from "@/components/layout/SidebarDeveloper"
+import SidebarDevelopers from "@/components/layout/SidebarDevelopers"
 
-import MainAreaWorkflows from "@/components/layout/MainAreaWorkflows/MainAreaWorkflows"
-import MainAreaDashboard from "@/components/layout/MainAreaDashboard"
-import MainAreaDesign from "@/components/layout/MainAreaDesign"
-import MainAreaDocuments from "@/components/layout/MainAreaDocuments"
+import MainAreaAutomations from "@/components/layout/MainAreaAutomations/MainAreaAutomations"
+import MainAreaDecks from "@/components/layout/MainAreaDecks"
+import MainAreaBases from "@/components/layout/MainAreaBases"
 import MainAreaExtensions from "@/components/layout/MainAreaExtensions"
 import MainAreaSettings from "@/components/layout/MainAreaSettings"
-import MainAreaDeveloper from "@/components/layout/MainAreaDeveloper"
+import MainAreaDevelopers from "@/components/layout/MainAreaDevelopers"
 
-import TabTopPaneWorkflows from "@/components/layout/TabTopPaneWorkflows"
-import TabTopPaneDocuments from "@/components/layout/TabTopPaneDocuments"
+import TabTopPaneAutomations from "@/components/layout/TabTopPaneAutomations"
+import TabTopPaneBases from "@/components/layout/TabTopPaneBases"
 
-import TabBottomPaneWorkflows from "@/components/layout/TabBottomPaneWorkflows"
-import TabBottomPaneDocuments from "@/components/layout/TabBottomPaneDocuments"
+import TabBottomPaneAutomations from "@/components/layout/TabBottomPaneAutomations"
+import TabBottomPaneBases from "@/components/layout/TabBottomPaneBases"
 
 const routes = [
   {
     path: "/",
     name: "default",
     components: {
-      sidebar: SidebarDashboard,
-      mainArea: MainAreaDashboard,
+      sidebar: SidebarDecks,
+      mainArea: MainAreaDecks,
     },
   },
   {
-    path: "/dashboard",
-    name: "dashboard",
+    path: "/decks",
+    name: "decks",
     components: {
-      sidebar: SidebarDashboard,
-      mainArea: MainAreaDashboard,
+      sidebar: SidebarDecks,
+      mainArea: MainAreaDecks,
     },
   },
   {
-    path: "/workflows",
-    name: "workflows",
+    path: "/automations",
+    name: "automations",
     components: {
-      sidebar: SidebarWorkflows,
-      mainArea: MainAreaWorkflows,
-      tabTopPane: TabTopPaneWorkflows,
-      tabBottomPane: TabBottomPaneWorkflows,
+      sidebar: SidebarAutomations,
+      mainArea: MainAreaAutomations,
+      tabTopPane: TabTopPaneAutomations,
+      tabBottomPane: TabBottomPaneAutomations,
     },
   },
   {
-    path: "/design",
-    name: "design",
+    path: "/bases",
+    name: "bases",
     components: {
-      sidebar: SidebarDesign,
-      mainArea: MainAreaDesign,
-    },
-  },
-  {
-    path: "/documents",
-    name: "documents",
-    components: {
-      sidebar: SidebarDocuments,
-      mainArea: MainAreaDocuments,
-      tabTopPane: TabTopPaneDocuments,
-      tabBottomPane: TabBottomPaneDocuments,
+      sidebar: SidebarBases,
+      mainArea: MainAreaBases,
+      tabTopPane: TabTopPaneBases,
+      tabBottomPane: TabBottomPaneBases,
     },
   },
   {
@@ -76,11 +66,11 @@ const routes = [
     },
   },
   {
-    path: "/developer",
-    name: "developer",
+    path: "/developers",
+    name: "developers",
     components: {
-      sidebar: SidebarDeveloper,
-      mainArea: MainAreaDeveloper,
+      sidebar: SidebarDevelopers,
+      mainArea: MainAreaDevelopers,
     },
   },
   {
@@ -90,11 +80,6 @@ const routes = [
       sidebar: SidebarSettings,
       mainArea: MainAreaSettings,
     },
-  },
-  {
-    path: "/spaces/:id",
-    name: "spaces/:id",
-    components: null,
   },
 ]
 

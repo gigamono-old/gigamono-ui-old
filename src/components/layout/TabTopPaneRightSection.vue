@@ -12,7 +12,7 @@
   .user-profile
     .img-wrapper
       .halo
-      img.avatar-user(:src="profile?.avatar32URL")
+      img.avatar-user(:src="profile?.avatarURL")
 
     .icon-expand-arrow
 </template>

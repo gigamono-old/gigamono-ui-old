@@ -27,7 +27,6 @@
     > .main {
       flex-grow: 1;
       background-color: var(--color-bg-8);
-      border-radius: var(--border-rad-md);
     }
   }
 </style>

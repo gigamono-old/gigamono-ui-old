@@ -6,9 +6,9 @@
 
   .app-icon-wrapper
     //- .container
-    img.app-icon(v-if="!isBuiltin", :src="avatar32URL")
+    img.app-icon(v-if="!isBuiltin", :src="avatarURL")
     svg.app-icon(v-else)
-      use(:href="`${avatar32URL}#${name.toLowerCase()}`")
+      use(:href="`${avatarURL}#${name.toLowerCase()}`")
 
   .app-details
     .name {{ name }}
@@ -21,7 +21,7 @@
       name: String,
       id: String,
       description: String,
-      avatar32URL: String,
+      avatarURL: String,
       hexColor: String,
       isBuiltin: {
         type: Boolean,

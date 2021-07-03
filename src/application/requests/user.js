@@ -4,60 +4,37 @@ import { clean } from "@/application/utils/string"
 // Gets the current user basic data.
 export const getSessionUser = async () => {
   const query = `
-  query getSessionUser {
-    getSessionUser{
+  query {
+    sessionUser{
       id
       profile {
         username
         email
-        avatar32URL
+        avatarURL
       }
-      session {
-        layout {
-          activityBarMainShortcuts {
-            iconName
-            route
-          }
-          activityBarOtherShortcuts {
-            iconName
-            route
-          }
-        }
-        focusWorkspaceIndex
-        workspaceFocusIndices {
-          focusProjectIndex
-          projectFocusIndices {
-            focusWorkflowIndex
-            focusDocumentIndex
-          }
-        }
-      }
-      workspaces {
-        projects {
-          id
-          name
-          documents {
+      preferences {
+        details {
+          focusWorkspaceIndex
+          workspaces {
             id
-            name
+            layout {
+              mainShortcuts {
+                iconName
+                entityName
+                route
+              }
+              quickShortcuts {
+                iconName
+                entityName
+                route
+              }
+              otherShortcuts {
+                iconName
+                entityName
+                route
+              }
+            }
           }
-          workflows {
-            id
-            name
-          }
-        }
-      }
-      integrations {
-        apps {
-          id
-          name
-          description
-          avatar32URL
-        }
-        builtins {
-          id
-          name
-          description
-          avatar32URL
         }
       }
     }

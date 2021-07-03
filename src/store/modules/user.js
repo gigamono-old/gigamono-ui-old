@@ -9,29 +9,24 @@ const getters = {
 
   profile: (state) => state.sessionUser?.profile,
 
-  integrations: (state) => state.sessionUser?.integrations,
+  details: (state) => state.sessionUser?.preferences?.details,
 
-  activityBarMainShortcuts: (state) => state.sessionUser?.session?.layout?.activityBarMainShortcuts,
+  focusWorkspaceIndex: (_, getters) => getters.details?.focusWorkspaceIndex,
 
-  activityBarOtherShortcuts: (state) =>
-    state.sessionUser?.session?.layout?.activityBarOtherShortcuts,
+  workspaces: (_, getters) => getters.details?.workspaces,
 
-  focusWorkspaceIndex: (state) => state.sessionUser?.session?.focusWorkspaceIndex,
+  focusWorkspace: (_, getters) => getters.workspaces?.[getters.focusWorkspaceIndex],
 
-  focusWorkspace: (state, getters) => state.sessionUser?.workspaces?.[getters.focusWorkspaceIndex],
+  mainShortcuts: (_, getters) => getters.focusWorkspace?.layout.mainShortcuts,
 
-  focusProjectIndex: (state, getters) =>
-    state.sessionUser?.session?.workspaceFocusIndices?.[getters.focusWorkspaceIndex]
-      ?.focusProjectIndex,
-
-  focusProject: (_, getters) => getters.focusWorkspace?.projects?.[getters.focusProjectIndex],
+  otherShortcuts: (_, getters) => getters.focusWorkspace?.layout.otherShortcuts,
 }
 
 const actions = {
   getSessionUser: async ({ commit }) => {
     try {
       const response = await getSessionUser()
-      commit("setSessionUser", response.data.data.getSessionUser)
+      commit("setSessionUser", response.data.data.sessionUser)
     } catch (error) {
       console.error("Error trying to get user data!", error)
     }

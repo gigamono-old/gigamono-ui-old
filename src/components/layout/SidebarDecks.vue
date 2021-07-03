@@ -1,26 +1,14 @@
 <template lang="pug">
-#sidebar-workflows
+#sidebar-decks
   //- Sidebar Header.
-  sidebar-header.sidebar-header(name="workflows")
+  sidebar-header.sidebar-header(name="decks")
 
-  //- Main content
+  //- Main content.
   .main
-    //- Abstract
-    ul.type-switch
-      li.option All
-      li.option Triggers
-      li.option Actions
-
-    .search-bar
-
-    .user-apps
-
-    .builtin-apps
 </template>
 
 <script>
   import SidebarHeader from "@/components/layout/SidebarHeader"
-
   export default {
     components: {
       SidebarHeader,
@@ -30,7 +18,7 @@
 </script>
 
 <style lang="scss" scoped>
-  #sidebar-workflows {
+  #sidebar-decks {
     height: 100%;
     width: 100%;
     display: flex;

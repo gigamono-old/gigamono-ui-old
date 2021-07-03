@@ -6,9 +6,9 @@
   ul.list
     li(v-for="item in list")
       .img-wrapper
-        img(v-if="!isSVG", :src="item.avatar32URL")
+        img(v-if="!isSVG", :src="item.avatarURL")
         svg(v-else)
-          use(:href="`${item.avatar32URL}#${item.name.toLowerCase()}`")
+          use(:href="`${item.avatarURL}#${item.name.toLowerCase()}`")
 
       .integration-name {{ item.name }}
 </template>

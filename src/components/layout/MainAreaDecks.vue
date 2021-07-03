@@ -1,5 +1,5 @@
 <template lang="pug">
-#main-area-documents
+#main-area-decks
 </template>
 
 <script>
@@ -9,7 +9,7 @@
 </script>
 
 <style lang="scss" scoped>
-  #main-area-documents {
+  #main-area-decks {
     height: 100%;
     width: 100%;
     background-color: var(--color-bg-6);

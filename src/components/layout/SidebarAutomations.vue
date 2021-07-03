@@ -1,7 +1,7 @@
 <template lang="pug">
-#sidebar-workflows
+#sidebar-automations
   //- Sidebar Header.
-  sidebar-header.sidebar-header(name="workflows")
+  sidebar-header.sidebar-header(name="automations")
 
   //- Main content
   .main
@@ -17,7 +17,7 @@
               :name="app.name",
               :id="app.id",
               :description="app.description",
-              :avatar32URL="app.avatar32URL",
+              :avatarURL="app.avatarURL",
             )
 
       collapsible.collapsible(title="Builtins")
@@ -27,7 +27,7 @@
               :name="builtin.name",
               :id="builtin.id",
               :description="builtin.description",
-              :avatar32URL="builtin.avatar32URL",
+              :avatarURL="builtin.avatarURL",
               :isBuiltin="true"
             )
 </template>
@@ -63,7 +63,7 @@
 </script>
 
 <style lang="scss" scoped>
-  #sidebar-workflows {
+  #sidebar-automations {
     height: 100%;
     width: 100%;
     display: flex;
