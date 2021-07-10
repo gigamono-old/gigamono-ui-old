@@ -12,4 +12,4 @@
 
 ## TODO
 - [ ] Typescript rewrite
-- [ ] Vite toolchain
+- [ ] Svelte and SvelteKit toolchain
